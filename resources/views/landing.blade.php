@@ -25,10 +25,10 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse btn-group btn-group-toggle" id="navbarSupportedContent" data-toggle="buttons">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+                        <a class="nav-link " aria-current="page" href="#Home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#Product">Product</a>
@@ -41,52 +41,70 @@
                     </li>
                 </ul>
             </div>
+
             <div class="btn-group" role="group" aria-label="Basic example">
+                @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                    <a href="{{ url('/home') }}" type="button" class="btn btn-primary ">Home</a>
+                    @else
+                    <a href="{{ route('login') }}" type="button" class="btn btn-primary ">Log in</a>
+
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}" type="button" class="btn btn-secondary ">Register</a>
+                    @endif
+                    @endauth
+                </div>
+                @endif
+                <!-- <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="../auth/login" type="button" class="btn btn-primary">Login</a>
                 <a href="register.php" type="button" class="btn btn-secondary">Register</a>
+            </div> -->
             </div>
-        </div>
     </nav>
     <!-- Masthead-->
-    <!-- <section class="features-icons bg-light text-center"> -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <section class="features-icons bg-light text-center">
+        <div class="" id="Home">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/thomas.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Thomas Shelby</h5>
+                            <p>Anak kedua dari keluarga Shelby.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/arthur.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Arthur Shelbyl</h5>
+                            <p>Anak pertama dari keluarga Shelby.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/john.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>John Shelby</h5>
+                            <p>Anak ketiga dari keluarga Shelby.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/img/thomas.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Thomas Shelby</h5>
-                    <p>Anak kedua dari keluarga Shelby.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/arthur.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Arthur Shelbyl</h5>
-                    <p>Anak pertama dari keluarga Shelby.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/john.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>John Shelby</h5>
-                    <p>Anak ketiga dari keluarga Shelby.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    </section>
     <!-- Product -->
     <section class="features-icons bg-light text-center">
         <div class="container" id="Product">
@@ -148,7 +166,7 @@
     </section>
 
     <!-- Contact Us -->
-    <section class="call-to-action text-white text-center"> 
+    <section class="call-to-action text-white text-center">
         <div class="container position-relative" id="ContactUs">
             <h2 class="mb-5">Contact Us</h2>
 
@@ -163,7 +181,7 @@
                             <a href="http://wa.me//6285258839097"><i class="bi-whatsapp fs-3"></i></a>
                         </li>
                         <li class="list-inline-item me-4">
-                            <a href="https://www.instagram.com/erickpratama_/"><i class="bi-instagram fs-3" ></i></a>
+                            <a href="https://www.instagram.com/erickpratama_/"><i class="bi-instagram fs-3"></i></a>
                         </li>
                         <li class="list-inline-item">
                             <a href="https://twitter.com/erickshelbyy"><i class="bi-twitter fs-3"></i></a>
@@ -177,8 +195,8 @@
     <footer class="footer bg-light">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-            <span>Copyright &copy; siXeyes Tech <?= date('Y'); ?></span>
-        </div>
+                <span>Copyright &copy; siXeyes Tech <?= date('Y'); ?></span>
+            </div>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
