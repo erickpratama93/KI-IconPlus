@@ -19,4 +19,7 @@ Route::get('/', function () {
 Route::get('/user/login', function () {
     return view('auth');
 });
+Route::get('/user/homepage', function () {
+    return view('homepage');
+});
  
