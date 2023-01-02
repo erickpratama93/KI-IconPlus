@@ -18,7 +18,10 @@ Route::get('/', function () {
 });
 Route::get('/user/login', function () {
     return view('auth');
-});
+})->name('login');
+Route::get('/user/signup', function () {
+    return view('signup');
+})->name('signup');
 
 //homepage route
 Route::get('/user/homepage', function () {
