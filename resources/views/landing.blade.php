@@ -70,7 +70,7 @@
                 </ul>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     class="btn btn-brand ms-lg-3">Contact</a>
-                <a href="{{ url('/user/login') }}"
+                <a href="{{ url('/home') }}"
                     class="btn btn-secondary
                      ms-lg-3">Login</a>
             </div>

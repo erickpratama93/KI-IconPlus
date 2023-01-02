@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
-Route::get('/user/login', function () {
-    return view('auth');
-});
+// Route::get('/user/login', function () {
+//     return view('auth');
+// });
 
 //homepage route
 Route::get('/user/homepage', function () {
@@ -30,6 +30,10 @@ Route::get('/user/event', function () {
 Route::get('/user/profil', function () {
     return view('profil');
 })->name('profil');
-Route::get('/user/status', function () {
-    return view('status');
-})->name('status');
+Route::get('/user/vanancy', function () {
+    return view('vanancy');
+})->name('vanancy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
