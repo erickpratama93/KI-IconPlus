@@ -17,8 +17,8 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Kunjungan Industri</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href={{route('homepage')}}>Dashboard</a>
-                    {{-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href={{route('homepage')}}>Home</a>
+                    {{-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Info Lowongan</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a> --}}
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href={{route('event')}}>Events</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href={{route('profil')}}>Profile</a>
@@ -72,14 +72,16 @@
                             </ul>
                         </div>
                     </div>
-                </nav>
-                <!-- Page content-->
-                @yield('content')
-            </div>
+                </div>
+            </nav>
+            <!-- Page content-->
+            @yield('content')
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="/LandingPage/js/scripts.js"></script>
-    </body>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/LandingPage/js/scripts.js"></script>
+</body>
+
 </html>
