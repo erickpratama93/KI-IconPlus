@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -6,7 +6,7 @@
             {{-- <i class="fas fa-laugh-wink"></i> --}}
             KI-APP
         </div>
-        <div class="sidebar-brand-text mx-3">Kunjungan Industri</div>
+        <div class="sidebar-brand-text mx-3">Kelas Industri</div>
     </a>
 
     <!-- Divider -->
@@ -14,31 +14,41 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href={{route('homepage')}}>
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>News</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
-    </div>
 
-    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Guru Tamu -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href={{route('guruTamu')}}>
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+            <span>Guru Tamu</span></a>
     </li>
 
-    <!-- Nav Item - Tables -->
+    <!-- Nav Item - Lowongan -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href={{route('lowongan')}}>
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Lowongan</span></a>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>PKL</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href={{route('info')}}>Info</a>
+                <a class="collapse-item" href={{route('daftar')}}>Daftar</a>
+            </div>
+        </div>
     </li>
 
     <!-- Divider -->
