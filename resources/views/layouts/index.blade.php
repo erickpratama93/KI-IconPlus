@@ -100,6 +100,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src={{asset('homepage/js/sb-admin-2.min.js')}}></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>=
 
 </body>
 
