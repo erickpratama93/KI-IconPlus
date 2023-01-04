@@ -3,5 +3,5 @@
 Home Page
 @endsection
 @section('content')
-<h2>Ini Home Page</h2>
+<h1>news</h1>
 @endsection
