@@ -36,6 +36,9 @@ Route::get('/user/vanancy', function () {
 Route::get('/user/info', function () {
     return view('info');
 })->name('info');
+Route::get('/user/lowongan', function () {
+    return view('lowongan');
+})->name('lowongan');
 
 Auth::routes();
 

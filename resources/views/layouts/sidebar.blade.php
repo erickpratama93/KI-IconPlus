@@ -32,7 +32,7 @@
 
     <!-- Nav Item - Lowongan -->
     <li class="nav-item">
-        <a class="nav-link" href="#home">
+        <a class="nav-link" href={{route('lowongan')}}>
             <i class="fas fa-fw fa-table"></i>
             <span>Lowongan</span></a>
     </li>
