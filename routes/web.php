@@ -27,15 +27,13 @@ Route::get('/user/homepage', function () {
 Route::get('/user/info', function () {
     return view('info');
 })->name('info');
-<<<<<<< HEAD
 Route::get('/user/lowongan', function () {
     return view('lowongan');
 })->name('lowongan');
-=======
 Route::get('/user/daftar', function () {
     return view('daftar');
 })->name('daftar');
->>>>>>> c776db3c0638b05b21bd91f4f08fecb174016a46
+
 
 Auth::routes();
 
