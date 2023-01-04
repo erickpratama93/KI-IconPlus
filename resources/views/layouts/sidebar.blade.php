@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="#home">
+        <a class="nav-link" href={{route('homepage')}}>
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>News</span></a>
     </li>
@@ -46,7 +46,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href={{route('info')}}>Info</a>
-                <a class="collapse-item" href="#home">Daftar</a>
+                <a class="collapse-item" href={{route('daftar')}}>Daftar</a>
             </div>
         </div>
     </li>

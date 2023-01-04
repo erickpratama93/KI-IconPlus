@@ -24,18 +24,12 @@ Route::get('/', function () {
 Route::get('/user/homepage', function () {
     return view('homepage');
 })->name('homepage');
-Route::get('/user/event', function () {
-    return view('event');
-})->name('event');
-Route::get('/user/profil', function () {
-    return view('profil');
-})->name('profil');
-Route::get('/user/vanancy', function () {
-    return view('vanancy');
-})->name('vanancy');
 Route::get('/user/info', function () {
     return view('info');
 })->name('info');
+Route::get('/user/daftar', function () {
+    return view('daftar');
+})->name('daftar');
 
 Auth::routes();
 
