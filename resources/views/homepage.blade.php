@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('title')
-    Selamat datang di homepage
+Home Page
 @endsection
 @section('content')
-    <h1>ini home page</h1>
+<h2>Ini Home Page</h2>
 @endsection

@@ -33,6 +33,9 @@ Route::get('/user/profil', function () {
 Route::get('/user/vanancy', function () {
     return view('vanancy');
 })->name('vanancy');
+Route::get('/user/info', function () {
+    return view('info');
+})->name('info');
 
 Auth::routes();
 
