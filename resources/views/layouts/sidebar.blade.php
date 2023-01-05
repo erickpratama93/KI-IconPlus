@@ -15,7 +15,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href={{route('homepage')}}>
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-newspaper"></i>
             <span>News</span></a>
     </li>
 
@@ -26,21 +26,21 @@
     <!-- Nav Item - Guru Tamu -->
     <li class="nav-item">
         <a class="nav-link" href={{route('guruTamu')}}>
-            <i class="fas fa-fw fa-chart-area"></i>
+        <i class="fas fa-fw fa-graduation-cap"></i>
             <span>Guru Tamu</span></a>
     </li>
 
     <!-- Nav Item - Lowongan -->
     <li class="nav-item">
         <a class="nav-link" href={{route('lowongan')}}>
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-fw fa-briefcase"></i>
             <span>Lowongan</span></a>
     </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
+            <i class="fas fa-fw fa-users"></i>
             <span>PKL</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
