@@ -49,6 +49,7 @@ class SchoolCooperationResource extends Resource
                 Forms\Components\TextInput::make('website')
                 ->required()
                 ->maxLength(500), 
+                
             ]);
     }
 
