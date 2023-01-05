@@ -47,7 +47,7 @@ Info PKL
                         <td>1</td>
                         <td>Erick Asrillah Pratama</td>
                         <td>ICON+ KP JOGJA</td>
-                        <td>Manajer KP</td>
+                        <td>Manajer</td>
                     </tr>
                     <tr>
                         <td>2</td>
