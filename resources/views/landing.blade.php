@@ -157,25 +157,17 @@
     <!-- MILESTONE -->
     <section id="milestone">
         <div class="container">
-            <div class="row text-center justify-content-center gy-4">
-                <div class="col-lg-2 col-sm-6">
-                    <h1 class="display-4">90K+</h1>
-                    <p class="mb-0">Happy Clients</p>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <h1 class="display-4">45M</h1>
-                    <p class="mb-0">Lines of code</p>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <h1 class="display-4">190</h1>
-                    <p class="mb-0">Total Downloads</p>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <h1 class="display-4">380K</h1>
-                    <p class="mb-0">YouTube Subscribers</p>
-                </div>
-            </div>
-        </div>
+            <div class="d-flex text-center justify-content-center flex-row">
+                <div class="p-2 bd-highlight">
+                    <div class="row text-center justify-content-around align-middle">
+                        <div class="col-lg-2 col-sm-6">
+                            <h1 class="display-4">12</h1>
+                            <p class="mb-0">Jumlah Sekolah MOU</p>
+                        </div>
+                        <div class="col-lg-4 col-lg-7">
+                            <img src="img/maps.jpeg"></img>
+                        </div>
+                    </div>
     </section>
 
     <section id="product" class="text-center">
@@ -271,15 +263,14 @@
                     <div class="intro">
                         <h6>Gallery</h6>
                         <h1>PLN ICON PLUS JATENG DIY</h1>
-                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                        <p class="mx-auto">Berikut beberapa postingan instagram kami :</p>
                     </div>
                 </div>
             </div>
         </div>
         <div id="projects-slider" class="owl-theme owl-carousel">
 
-            <div class="project">
+            <div class="project col-sm-6">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cm3aJyGLlAM/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                     <div style="padding:0px;"> <a href="https://www.instagram.com/p/Cm3aJyGLlAM/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                             <div style=" display: flex; flex-direction: row; align-items: center;">
@@ -329,7 +320,7 @@
                 </blockquote>
                 <script async src="//www.instagram.com/embed.js"></script>
             </div>
-            <div class="project">
+            <div class="project col-sm-6">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cm5g1QPLG-K/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                     <div style="padding:16px;"> <a href="https://www.instagram.com/p/Cm5g1QPLG-K/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                             <div style=" display: flex; flex-direction: row; align-items: center;">
@@ -379,7 +370,7 @@
                 </blockquote>
                 <script async src="//www.instagram.com/embed.js"></script>
             </div>
-            <div class="project">
+            <div class="project col-sm-6">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cm1w31Uh98v/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                     <div style="padding:16px;"> <a href="https://www.instagram.com/reel/Cm1w31Uh98v/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                             <div style=" display: flex; flex-direction: row; align-items: center;">
@@ -429,7 +420,7 @@
                 </blockquote>
                 <script async src="//www.instagram.com/embed.js"></script>
             </div>
-            <div class="project">
+            <div class="project col-sm-6">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CmtgexkLwmL/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                     <div style="padding:16px;"> <a href="https://www.instagram.com/p/CmtgexkLwmL/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                             <div style=" display: flex; flex-direction: row; align-items: center;">
