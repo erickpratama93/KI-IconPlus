@@ -256,7 +256,7 @@ section {
 
 
 #milestone {
-    background: linear-gradient(rgba(91, 192, 248, 0.85), rgba(27, 115, 162, 0.85)), url(../img/bg_banner1.jpg);
+    background: linear-gradient(rgba(5, 89, 112, 0.85), rgba(5, 89, 112, 0.85)), url(../img/bg_banner1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
