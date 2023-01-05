@@ -28,8 +28,8 @@ class AboutUsResource extends Resource
                 ->maxLength(255), 
                 Forms\Components\Textarea::make('subtitle')
                 ->required()
-                ->minLength(50)
-                ->maxLength(5000),
+                ->minLength(5)
+                    ->maxLength(5000),
             ]);
     }
 

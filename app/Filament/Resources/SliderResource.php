@@ -26,8 +26,12 @@ class SliderResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
+                    Forms\Components\FileUpload::make('slider_image')
+                    ->minSize(50)
+                    ->maxSize(1024),
                     Forms\Components\Textarea::make('subtitle')
-                    ->minLength(50)
+                    ->required()
+                ->minLength(5)
                     ->maxLength(5000),
             ]);
     }

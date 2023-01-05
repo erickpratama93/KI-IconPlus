@@ -30,7 +30,8 @@ class ActivityResource extends Resource
                     ->minSize(50)
                     ->maxSize(1024),
                     Forms\Components\Textarea::make('activity_desc')
-                    ->minLength(50)
+                    ->required()
+                ->minLength(5)
                     ->maxLength(5000),
             ]);
     }

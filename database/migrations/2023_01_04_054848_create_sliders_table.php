@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('subtitle');
+            $table->string('slider_image');
             $table->timestamps();
         });
     }

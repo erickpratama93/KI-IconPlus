@@ -31,8 +31,9 @@ class SchoolCooperationResource extends Resource
                 ->required()
                 ->maxLength(255),
                 Forms\Components\Textarea::make('school_address')
-                ->minLength(50)
-                ->maxLength(5000),
+                ->required()
+                ->minLength(5)
+                    ->maxLength(5000),
                 Select::make('accreditation')
                  ->options([ 
                      'a' => 'A',
