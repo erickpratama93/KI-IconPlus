@@ -14,18 +14,22 @@ return new class extends Migration
     public function up()
     {
         Schema::create('school_cooperations', function (Blueprint $table) {
-            $table->id();
-            $table->string('npsn'); 
+            $table->bigIncrements('id');
+            $table->string('npsn');
             $table->string('school_name');
             $table->string('school_address');
             $table->string('accreditation');
             $table->string('headmaster_name');
             $table->string('phone_number');
             $table->string('website');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
             $table->timestamps();
         });
     }
- 
+
     /**
      * Reverse the migrations.
      *
