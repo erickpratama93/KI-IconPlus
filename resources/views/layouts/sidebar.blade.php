@@ -22,6 +22,10 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Information
+    </div>
 
     <!-- Nav Item - Guru Tamu -->
     <li class="nav-item">

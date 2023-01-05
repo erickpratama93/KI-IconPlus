@@ -177,11 +177,11 @@
             <div class="d-flex text-center justify-content-center flex-row">
                 <div class="p-2 bd-highlight">
                     <div class="row text-center justify-content-around align-middle">
-                        <div class="col-lg-2 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
                             <h1 class="display-4">12</h1>
                             <p class="mb-0">Jumlah Sekolah MOU</p>
                         </div>
-                        <div class="col-lg-4 col-lg-7">
+                        <div class="col-lg-6 col-lg-6">
                             <img src="img/maps.jpeg"></img>
                         </div>
                     </div>
