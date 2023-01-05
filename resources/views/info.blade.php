@@ -45,27 +45,27 @@ Info PKL
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Abah Tyo</td>
+                        <td>Erick Shelby</td>
                         <td>ICON+ KP JOGJA</td>
-                        <td>Aktivasi</td>
+                        <td>Manajer</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Faisol</td>
-                        <td>ICON+ KP JOGJA</td>
-                        <td>Canvasing</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Erickontl</td>
+                        <td>Faisal Renfiliano</td>
                         <td>ICON+ KP JOGJA</td>
                         <td>Gudang</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>Faisal Gamon</td>
+                        <td>3</td>
+                        <td>Abah Tyo</td>
                         <td>ICON+ KP JOGJA</td>
-                        <td>Surveyor</td>
+                        <td>Harset</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Faisol Qurban</td>
+                        <td>ICON+ KP JOGJA</td>
+                        <td>Aktivasi</td>
                     </tr>
                 </tbody>
             </table>
