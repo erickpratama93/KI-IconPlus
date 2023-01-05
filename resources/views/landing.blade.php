@@ -87,42 +87,25 @@
                 </div>
             </div>
         </div>
-        <div class="slide slide2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-10 offset-lg-1 text-white">
-                        <h6 class="text-white text-uppercase">PT. PLN ICON PLUS Jawa Bagian Tengah</h6>
-                        <h1 class="display-3 my-4">KELAS<br />INDUSTRI</h1>
-                        <!-- <a href="#" class="btn btn-brand">Get Started</a>
-                        <a href="#" class="btn btn-outline-light ms-3">Our work</a> -->
+        {{-- @if (count($slider)>0) --}}
+            @foreach ($slider as $data)
+            <div class="slide slide1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center text-white">
+                            <h6 class="text-white text-uppercase">{{$data->title}}</h6>
+                            <h1 class="display-3 my-4">{{$data->subtitle}}</h1>
+                            <!-- <a href="#" class="btn btn-brand">Get Started</a>
+                            <a href="#" class="btn btn-outline-light ms-3">Our work</a> -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="slide slide3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-10 offset-lg-1 text-white">
-                        <h6 class="text-white text-uppercase">PT. PLN ICON PLUS Jawa Bagian Tengah</h6>
-                        <h1 class="display-3 my-4">KELAS<br />INDUSTRI</h1>
-                        <!-- <a href="#" class="btn btn-brand">Get Started</a>
-                        <a href="#" class="btn btn-outline-light ms-3">Our work</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slide slide4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-10 offset-lg-1 text-white">
-                        <h6 class="text-white text-uppercase">PT. PLN ICON PLUS Jawa Bagian Tengah</h6>
-                        <h1 class="display-3 my-4">KELAS<br />INDUSTRI</h1>
-                        <!-- <a href="#" class="btn btn-brand">Get Started</a>
-                        <a href="#" class="btn btn-outline-light ms-3">Our work</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
+            @endforeach
+            
+        {{-- @else
+            <h3>nothing data</h3>
+        @endif --}}
     </div>
 
     <!-- ABOUT -->
@@ -769,29 +752,44 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="userName" class="form-label">School name</label>
-                                        <input type="text" class="form-control" placeholder="Ex : SMP Negeri 1 Bondowoso" id="userName" aria-describedby="emailHelp">
+                                        <input type="text" class="form-control" placeholder="Ex : SMP Negeri 1 Bondowoso" id="schoolname" name='email' aria-describedby="emailHelp">
                                     </div>
 
                                     <div class="col-12">
                                         <label for="userName" class="form-label">School Email</label>
-                                        <input type="email" class="form-control" placeholder="Ex : smpn@email.com" id="userName" aria-describedby="emailHelp">
+                                        <input type="email" class="form-control" placeholder="Ex : smpn@email.com" id="schoolemail" aria-describedby="emailHelp">
                                     </div>
                                     <div class="col-12">
                                         <label for="userName" class="form-label">PIC Name</label>
-                                        <input type="text" class="form-control" placeholder="PIC" id="userName" aria-describedby="">
+                                        <input type="text" class="form-control" placeholder="PIC" id="picname" aria-describedby="">
                                     </div>
                                     <div class="col-12">
                                         <label for="userName" class="form-label">Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="086xxxxxxx" id="userName" aria-describedby="">
+                                        <input type="text" class="form-control" placeholder="086xxxxxxx" id="nohp" aria-describedby="">
                                     </div>
                                     <div class="col-12">
                                         <label for="exampleInputEmail1" class="form-label">Enter Message</label>
-                                        <textarea name="" placeholder="This is looking great and nice." class="form-control" id="" rows="4"></textarea>
+                                        <textarea name="" placeholder="This is looking great and nice." class="form-control" id="pesan" rows="4"></textarea>
                                     </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-brand">Send Message</button>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button onclick="myFunction()" class="btn btn-brand">Send Message</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <span id="demo"></span>
+                                        </div>
                                     </div>
+                                    <script>
+                                        function myFunction() {
+                                          var a = document.getElementById("schoolname").value;
+                                          var b = document.getElementById("schoolemail").value;
+                                          var c = document.getElementById("picname").value;
+                                          var d = document.getElementById("nohp").value;
+                                          var e = document.getElementById("pesan").value;
+                                          document.getElementById("demo").innerHTML ='<button href="https://wa.me/+6285606683326?text=%20'+a+'%20'+b+'%20'+c+'%20'+d+'%20'+e+" class="btn btn-brand">Send Message</button>';
+                                
+                                        }
+                                        </script>
                                 </form>
                             </div>
                         </div>
@@ -805,7 +803,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/app.js"></script>
-
+    
 </body>
 
 </html>
