@@ -45,25 +45,25 @@ Info PKL
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Erick Shelby</td>
+                        <td>Erick Asrillah Pratama</td>
                         <td>ICON+ KP JOGJA</td>
-                        <td>Manajer</td>
+                        <td>Manajer KP</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Faisal Renfiliano</td>
+                        <td>Amir Faisal Karimullah</td>
                         <td>ICON+ KP JOGJA</td>
                         <td>Gudang</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Abah Tyo</td>
+                        <td>Ardyas Setya Nugraha</td>
                         <td>ICON+ KP JOGJA</td>
                         <td>Harset</td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>Faisol Qurban</td>
+                        <td>Nur Achmad Faisol Qubro</td>
                         <td>ICON+ KP JOGJA</td>
                         <td>Aktivasi</td>
                     </tr>
