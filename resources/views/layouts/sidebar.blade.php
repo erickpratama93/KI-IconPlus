@@ -25,7 +25,7 @@
 
     <!-- Nav Item - Guru Tamu -->
     <li class="nav-item">
-        <a class="nav-link" href="#home">
+        <a class="nav-link" href={{route('guruTamu')}}>
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Guru Tamu</span></a>
     </li>

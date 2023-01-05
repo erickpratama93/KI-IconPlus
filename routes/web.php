@@ -33,6 +33,9 @@ Route::get('/user/lowongan', function () {
 Route::get('/user/daftar', function () {
     return view('daftar');
 })->name('daftar');
+Route::get('/user/guruTamu', function () {
+    return view('guruTamu');
+})->name('guruTamu');
 
 
 Auth::routes();

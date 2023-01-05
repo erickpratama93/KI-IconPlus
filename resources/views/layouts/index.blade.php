@@ -55,7 +55,9 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                    <p class="mb-0">Copyright PLN Icon Plus Kelas Industri <script>
+                    document.write(new Date().getFullYear())
+                </script>. All rights Reserved</p> Distributed By <a hrefs="https://themewagon.com">PLN Icon Plus JBTG</a>
                     </div>
                 </div>
             </footer>
