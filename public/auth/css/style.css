@@ -8314,7 +8314,7 @@ h1, h2, h3, h4, h5,
 
 /* Style the checkmark/indicator */
 .checkbox-primary {
-  color: #e3b04b; }
+  color: #055970; }
   .checkbox-primary input:checked ~ .checkmark:after {
     color: #e3b04b; }
 
