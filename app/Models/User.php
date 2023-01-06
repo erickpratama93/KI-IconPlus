@@ -15,10 +15,11 @@ class User extends Authenticatable implements FilamentUser
     use HasApiTokens, HasFactory, Notifiable;
 
     //can acess filament only
-    public function canAccessFilament(): bool
-    {
-        return str_ends_with($this->email, '@pln.com') ;
-    }
+    // public function canAccessFilament(): bool
+    // {
+    //     return str_ends_with($this->email, '@pln.com') ;
+    // }
+    protected $guard = 'users';
     /**
      * The attributes that are mass assignable.
      *
@@ -28,6 +29,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
+        'is_admin'
     ];
 
     /**
