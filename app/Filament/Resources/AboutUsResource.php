@@ -16,12 +16,12 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class AboutUsResource extends Resource
 {
     protected static ?string $model = AboutUs::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
-
+    protected static ?string $navigationIcon = 'heroicon-o-information-circle';
+    protected static ?string $navigationGroup = 'Landing Page';
+    
     public static function form(Form $form): Form
     {
-        return $form
+        return $form 
             ->schema([
                 Forms\Components\TextInput::make('title')
                 ->required()

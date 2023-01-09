@@ -18,7 +18,7 @@ class ActivityResource extends Resource
     protected static ?string $model = Activity::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
-
+    protected static ?string $navigationGroup = 'Landing Page';
     public static function form(Form $form): Form
     {
         return $form

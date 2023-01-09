@@ -18,8 +18,8 @@ class SchoolCooperationResource extends Resource
 {
     protected static ?string $model = SchoolCooperation::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
-
+    protected static ?string $navigationIcon = 'heroicon-o-map';
+    protected static ?string $navigationGroup = 'Landing Page';
     public static function form(Form $form): Form
     {
         return $form
