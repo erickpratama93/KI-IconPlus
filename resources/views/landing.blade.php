@@ -16,7 +16,7 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="carousel/carousel.css">
-
+   
     <title>Icon+ KI</title>
 </head>
 
@@ -75,21 +75,9 @@
 
     <!-- SLIDER -->
     <div class="owl-carousel owl-theme hero-slider">
-        {{-- <div class="slide slide1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center text-white">
-                        <h6 class="text-white text-uppercase">PT. PLN ICON PLUS Jawa Bagian Tengah</h6>
-                        <h1 class="display-3 my-4">KELAS<br />INDUSTRI</h1>
-                        <!-- <a href="#" class="btn btn-brand">Get Started</a>
-                        <a href="#" class="btn btn-outline-light ms-3">Our work</a> -->
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        {{-- @if (count($slider)>0) --}}
+       
             @foreach ($slider as $data)
-            <div class="slide slide1">
+            <div class="slide slide1" style="background-image:image()">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-left text-white">
@@ -120,7 +108,7 @@
                                 <img src="img/icon6.png" alt="">
                                 <div class="ms-4">
                                     <h5>{{$data->title}}</h5>
-                                    <p>{{$data->title}}</p>
+                                    <p>{{$data->subtitle}}</p>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +184,7 @@
                     
                 <div class="col-md-4">
                     <article class="blog-post">
-                        <img src={{$data->product_image}} alt="">
+                        <img src="" alt="">
                         <div class="content">
                             <h5>{{$data->title}}</h5>
                             <p>{{$data->product_description}}</p>
