@@ -91,6 +91,8 @@ Home Page
                 </div><!-- end col -->
             </div><!-- end row -->
 
+            <hr class="invis">
+
             <div class="blog-box row">
                 <div class="col-md-4">
                     <div class="post-media">

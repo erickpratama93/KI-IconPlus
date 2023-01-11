@@ -42,11 +42,7 @@
             </div>
         </li>
 
-        
-            <p id="" class="d-flex align-content-center" href="#" role="button" data-bs-toggle="" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
-
-                <!-- Nav Item - User Information -->
+        <!-- Nav Item - User Information -->
         <li class="d-flex align-items-center">
             <div class="" aria-labelledby="">
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
