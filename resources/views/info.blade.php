@@ -1,9 +1,8 @@
 @extends('layouts.index')
 @section('title')
-Info PKL
+    Daftar PKL
 @endsection
 @section('content')
-<!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Data PKL</h6>

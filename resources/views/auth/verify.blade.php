@@ -9,9 +9,15 @@
 
                 <div class="card-body">
                     @if (session('resent'))
+<<<<<<< HEAD
+                    <div class="alert alert-success" role="alert">
+                        {{ __('A fresh verification link has been sent to your email address.') }}
+                    </div>
+=======
                         <div class="alert alert-success" role="alert">
                             {{ __('A fresh verification link has been sent to your email address.') }}
                         </div>
+>>>>>>> 91c34c7d3c747004fcdc4d5c894a4dfcb4e9fb3d
                     @endif
 
                     {{ __('Before proceeding, please check your email for a verification link.') }}
@@ -25,4 +31,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 91c34c7d3c747004fcdc4d5c894a4dfcb4e9fb3d
