@@ -77,20 +77,26 @@
     <div class="owl-carousel owl-theme hero-slider">
        
             @foreach ($slider as $data)
-            <div class="slide slide1" style="background-image:image()">
+            <div class="slide slide1" style="background-image: {{ url('storage/'.$data->slider_image) }}" id="variable_background">
+                
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-left text-white">
+                            <p>{{ url('storage/'.$data->slider_image) }}</p>
                             <h6 class="text-white text-uppercase">{{$data->title}}</h6>
                             <h1 class="display-3 my-4">{{$data->subtitle}}</h1>
-                            <!-- <a href="#" class="btn btn-brand">Get Started</a>
-                            <a href="#" class="btn btn-outline-light ms-3">Our work</a> -->
+                            
                         </div>
                     </div>
                 </div>
+                
             </div>
+            {{-- <script>
+                var newImagePath = "{{ url('storage/'.$data->slider_image) }}";
+                document.getElementById('variable_background').style.backgroundImage = "url('" + newImagePath + "')";
+            </script> --}}
             @endforeach
-            
+           
         {{-- @else
             <h3>nothing data</h3>
         @endif --}}
@@ -184,7 +190,7 @@
                     
                 <div class="col-md-4">
                     <article class="blog-post">
-                        <img src="" alt="">
+                        <img src={{ url('storage/'.$data->product_image) }} alt="">
                         <div class="content">
                             <h5>{{$data->title}}</h5>
                             <p>{{$data->product_description}}</p>
@@ -337,7 +343,7 @@
             @foreach ($review as $data)
             <div class="review">
                 <div class="person">
-                    <img src={{$data->reviews_image}} alt="">
+                    <img src={{ url('storage/'.$data->reviews_image) }} alt="">
                     <h5>{{$data->reviews_name}}</h5>
                     {{-- <small>SMKN 1 Bondowoso</small> --}}
                 </div>

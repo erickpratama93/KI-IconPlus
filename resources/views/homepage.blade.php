@@ -8,7 +8,7 @@ Home Page
     <h1 class="h3 mb-0 text-gray-800">News</h1>
 </div>
 
-<div class="card p-3 scroll" style="height: 500px">
+<div class="card p-3 scroll" style="height: max-content">
     <div class="page-wrapper">
         <div class="blog-top clearfix">
             <h4 class="pull-left">Recent News <a href="#"><i class="fa fa-rss"></i></a></h4>
