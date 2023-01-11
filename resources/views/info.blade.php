@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <div class="row">
+            <div class="">
                 <div class="col-sm-12 col-md-6">
                     <div class="dataTables_length" id="dataTable_length">
                         <div class="row">

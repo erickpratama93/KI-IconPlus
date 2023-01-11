@@ -23,6 +23,9 @@ class LandingController extends Controller
         //review
         $review = DB::table('reviews');
         $review = $review->get();
+        //news
+        $news = DB::table('news');
+        $news = $news->get();
 
         // $slider = DB::table('sliders');
         // $slider = $slider->get();
@@ -32,6 +35,7 @@ class LandingController extends Controller
             'about' => $about,
             'product' => $product,
             'review' => $review,
+            'news' => $news,
 
         ]);
     }

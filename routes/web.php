@@ -38,6 +38,7 @@ Route::get('/user/guruTamu', function () {
 })->name('guruTamu');
 
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
