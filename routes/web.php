@@ -36,6 +36,9 @@ Route::get('/user/daftar', function () {
 Route::get('/user/guruTamu', function () {
     return view('guruTamu');
 })->name('guruTamu');
+Route::get('/user/detail-news', function () {
+    return view('newsDetail');
+})->name('newsDetail');
 
 
 Auth::routes();

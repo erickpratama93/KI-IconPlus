@@ -52,7 +52,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            {{-- <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                     <p class="mb-0">Copyright PLN Icon Plus Kelas Industri <script>
@@ -60,7 +60,7 @@
                 </script>. All rights Reserved</p> Distributed By <a hrefs="https://themewagon.com">PLN Icon Plus JBTG</a>
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
             <!-- End of Footer -->
 
         </div>

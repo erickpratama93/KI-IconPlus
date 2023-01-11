@@ -31,8 +31,7 @@ class JobResource extends Resource
                 ->maxSize(1024),
                 Forms\Components\Textarea::make('job_desc')
                 ->required()
-                ->minLength(5)
-                    ->maxLength(5000),
+                
             ]);
     }
 
