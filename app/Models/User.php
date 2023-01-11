@@ -6,23 +6,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable; 
-    public function canAccessFilament(): bool
-    {
-        return str_ends_with($this->email, '@pln.com') ;
-    }
+    use HasApiTokens, HasFactory, Notifiable;
     //  @var array<int, string>
-     
+
     // protected $fillable = [
     //     'name',
     //     'email',
-    //     'password',  
+    //     'password',
     // ];
 
     // /**
@@ -44,8 +39,6 @@ class User extends Authenticatable implements FilamentUser
     //     'email_verified_at' => 'datetime',
     // ];
 
-    protected $guard = 'users';
-
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -53,6 +46,6 @@ class User extends Authenticatable implements FilamentUser
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
+
 }
-   
+
