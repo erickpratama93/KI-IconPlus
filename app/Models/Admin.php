@@ -4,20 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Filament\Models\Contracts\FilamentUser;
 
-class Admin extends Model
+class Admin extends Authenticatable implements FilamentUser
 {
-    
-    use Notifiable;
-    
-    protected $guard = 'admin';
+    protected $guarded = ['id'];
 
-        protected $fillable = [
-            'name', 'email', 'password',
-        ];
-
-        protected $hidden = [
-            'password', 'remember_token',
-        ];
+    public function canAccessFilament(): bool
+    {
+        return true;
+    }
 }
