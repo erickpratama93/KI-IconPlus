@@ -42,7 +42,7 @@ class ProductsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('product_image'),
-                Tables\Columns\TextColumn::make('product_description'),
+                Tables\Columns\TextColumn::make('product_description')->limit(50),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')

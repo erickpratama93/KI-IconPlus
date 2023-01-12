@@ -24,14 +24,17 @@
 
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
         <li class="nav-item dropdown no-arrow d-sm-none">
-            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
             </a>
             <!-- Dropdown - Messages -->
-            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                     <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
                                 <i class="fas fa-search fa-sm"></i>
@@ -43,19 +46,32 @@
         </li>
 
         <!-- Nav Item - User Information -->
-        <li class="d-flex align-items-center">
-            <div class="" aria-labelledby="">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-expanded="false">
+                {{ Auth::user()->name }}
+            </button>
+            <div class="dropdown-menu">
+                <li class="d-flex align-items-center">
+                    <div class="" aria-labelledby="">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+                <x-dropdown-link :href="route('profile.edit')">
+                    {{ __('Profile') }}
+                </x-dropdown-link>
             </div>
-        </li>
-
+        </div>
     </ul>
-
+    <script>
+        $('.dropdown-toggle').dropdown()
+    </script>
 </nav>

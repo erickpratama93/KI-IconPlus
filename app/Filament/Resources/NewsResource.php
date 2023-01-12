@@ -42,7 +42,7 @@ class NewsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('news_title'),
                 Tables\Columns\TextColumn::make('news_image'),
-                Tables\Columns\TextColumn::make('news_description'),
+                Tables\Columns\TextColumn::make('news_description')->limit(50),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
