@@ -51,6 +51,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href={{route('info')}}>Info</a>
                 <a class="collapse-item" href={{route('daftar')}}>Daftar</a>
+                <a class="collapse-item" href={{route('info')}}>Status pendaftaran</a>
+
             </div>
         </div>
     </li>

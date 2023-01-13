@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,12 +25,29 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        // return view('homepage');
-
         $news = DB::table('news');
-        $news = $news->get(); 
- 
-        return view('homepage', ['news' => $news]);
-        
+        $news = $news->get();
+
+        $loker = DB::table('jobs');
+        $loker = $loker->get();
+
+
+        return view('homepage', [
+            'news' => $news,
+            'loker' => $loker,
+
+        ]);
+        // return view('homepage');
+    }
+    public function loker(Request $request)
+    {
+        $loker = DB::table('jobs');
+        $loker = $loker->get();
+
+
+        return view('lowongan', [
+            'loker' => $loker,
+
+        ]);
     }
 }

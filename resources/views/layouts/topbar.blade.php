@@ -41,8 +41,8 @@
                             </button>
                         </div>
                     </div>
-                </form>
-            </div>
+                </form> 
+            </div> 
         </li>
 
         <!-- Nav Item - User Information -->

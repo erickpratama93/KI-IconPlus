@@ -38,22 +38,41 @@
                         </div><!-- end meta -->
                     </div><!-- end blog-box -->
 
-                    <hr class="invis">
+        <div class="blog-list clearfix">
 
-                    <div class="blog-box row">
-                        <div class="col-md-4">
-                            <div class="post-media">
-                                <a href="tech-single.html" title="">
-                                    <img src="upload/tech_blog_02.jpg" alt="" class="img-fluid">
-                                    <div class="hovereffect"></div>
-                                </a>
-                            </div><!-- end media -->
-                        </div><!-- end col -->
+            @foreach ($news as $data)
+                
+            <div class="blog-box row">
+                <div class="col-md-4">
+                    <div class="post-media">
+                        <a href="tech-single.html" title="">
+                            <img src={{ url('storage/' . $data->news_image) }} alt="" class="img-fluid">
+                            <div class="hovereffect"></div>
+                        </a>
+                    </div><!-- end media -->
+                </div><!-- end col -->
 
+                <div class="blog-meta big-meta col-md-8">
+                    <h4><a href="tech-single.html" title="">{{$data->news_title}}</a></h4>
+                    <p style="display:block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 100ch;">
+                        {{$data->news_description}}</p>
+                    {{-- <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Gadgets</a></small> --}}
+                    <small><a href="tech-single.html" title="">{{$data->created_at}}</a></small>
+                    {{-- <small><a href="tech-author.html" title="">by Matilda</a></small> --}}
+                    {{-- <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 1114</a></small> --}}
+                </div><!-- end meta -->
+            </div><!-- end blog-box -->
 
-                    </div><!-- end blog-list -->
-                </div><!-- end page-wrapper -->
+            <hr class="invis">
             @endforeach
 
-        </div>
-    @endsection
+
+           
+        </div><!-- end blog-list -->
+    </div><!-- end page-wrapper -->
+</div>
+@endsection
