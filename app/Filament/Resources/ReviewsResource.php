@@ -46,7 +46,7 @@ class ReviewsResource extends Resource
                 Tables\Columns\TextColumn::make('reviews_name'),
                 Tables\Columns\TextColumn::make('reviews_school'),
                 Tables\Columns\TextColumn::make('reviews_image'),
-                Tables\Columns\TextColumn::make('reviews_message'),
+                Tables\Columns\TextColumn::make('reviews_message')->limit(50),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')

@@ -40,8 +40,8 @@ class JobResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('job_title'),
-                Tables\Columns\TextColumn::make('job_image'),
-                Tables\Columns\TextColumn::make('job_desc'),
+                Tables\Columns\TextColumn::make('job_image')->limit(50),
+                Tables\Columns\TextColumn::make('job_desc')->limit(50),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
