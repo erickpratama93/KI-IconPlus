@@ -11,15 +11,15 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('job_title');
             $table->string('job_image')->nullable();
-            $table->longText('job_desc')->nullable(); 
-            $table->timestamps();
-            
+            $table->longText('job_desc')->nullable();   
+            $table->enum('status', ['approved', 'declined']);
+            $table->timestamps(); 
         });
     }
 

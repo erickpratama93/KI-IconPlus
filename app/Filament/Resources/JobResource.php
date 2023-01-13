@@ -13,6 +13,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 class JobResource extends Resource
 {
     protected static ?string $model = Job::class;
@@ -30,7 +31,12 @@ class JobResource extends Resource
                 ->minSize(50)
                 ->maxSize(1024),
                 Forms\Components\Textarea::make('job_desc')
-                ->required()
+                ->required(),
+                Select::make('status')
+                ->options([ 
+                    'approved' => 'Approved',
+                   'declined' => 'Declined',
+                ]),
                 
             ]);
     }
@@ -42,6 +48,8 @@ class JobResource extends Resource
                 Tables\Columns\TextColumn::make('job_title'),
                 Tables\Columns\TextColumn::make('job_image')->limit(50),
                 Tables\Columns\TextColumn::make('job_desc')->limit(50),
+                Tables\Columns\TextColumn::make('status'),
+             
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
@@ -70,7 +78,7 @@ class JobResource extends Resource
         return [
             'index' => Pages\ListJobs::route('/'),
             'create' => Pages\CreateJob::route('/create'),
-            'edit' => Pages\EditJob::route('/{record}/edit'),
+            'edit' => Pages\EditJob::route('/{record}/edit'), 
         ];
     }    
 }
