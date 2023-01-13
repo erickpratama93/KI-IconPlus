@@ -19,6 +19,8 @@ class ReviewsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-star';
     protected static ?string $navigationGroup = 'Landing Page';
+    protected static ?string $recordTitleAttribute = 'reviews_name';
+
     public static function form(Form $form): Form
     {
         return $form

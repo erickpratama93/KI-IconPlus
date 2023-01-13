@@ -47,6 +47,9 @@ Route::get('/user/guruTamu', function () {
 Route::get('/user/detail-news', function () {
     return view('newsDetail');
 })->name('newsDetail');
+Route::get('/user/detail-job', function () {
+    return view('detailJobs');
+})->name('detailJobs');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage')->middleware('auth');
 Route::get('user/lowongan', [App\Http\Controllers\HomeController::class, 'loker'])->name('lowongan')->middleware('auth');

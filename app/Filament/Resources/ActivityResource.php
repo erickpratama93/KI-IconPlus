@@ -19,6 +19,7 @@ class ActivityResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
     protected static ?string $navigationGroup = 'Landing Page';
+    protected static ?string $recordTitleAttribute = 'activity_title';
     public static function form(Form $form): Form
     {
         return $form

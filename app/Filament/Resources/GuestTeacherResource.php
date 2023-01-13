@@ -19,6 +19,7 @@ class GuestTeacherResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
     protected static ?string $navigationGroup = 'Landing Page';
+    protected static ?string $recordTitleAttribute = 'title';
     public static function form(Form $form): Form
     { 
         return $form

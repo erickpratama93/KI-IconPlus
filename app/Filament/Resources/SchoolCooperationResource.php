@@ -20,6 +20,7 @@ class SchoolCooperationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-map';
     protected static ?string $navigationGroup = 'Landing Page';
+    protected static ?string $recordTitleAttribute = 'school_name';
     public static function form(Form $form): Form
     {
         return $form
