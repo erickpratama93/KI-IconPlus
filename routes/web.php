@@ -29,15 +29,15 @@ Route::middleware('auth')->group(function () {
 });
 
 //homepage route
-Route::get('/user/homepage', function () {
-    return view('homepage');
-})->name('homepage');
+// Route::get('/user/homepage', function () {
+//     return view('homepage');
+// })->name('homepage');
 Route::get('/user/info', function () {
     return view('info');
 })->name('info');
-Route::get('/user/lowongan', function () {
-    return view('lowongan');
-})->name('lowongan');
+// Route::get('/user/lowongan', function () {
+//     return view('lowongan');
+// })->name('lowongan');
 Route::get('/user/daftar', function () {
     return view('daftar');
 })->name('daftar');
@@ -48,8 +48,9 @@ Route::get('/user/detail-news', function () {
     return view('newsDetail');
 })->name('newsDetail');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage')->middleware('auth');
+Route::get('user/lowongan', [App\Http\Controllers\HomeController::class, 'loker'])->name('lowongan')->middleware('auth');
 Route::get('/', [App\Http\Controllers\LandingController::class, 'index']);
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

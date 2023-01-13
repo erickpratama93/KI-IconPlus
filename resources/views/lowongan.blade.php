@@ -8,12 +8,14 @@ Lowongan
   <h1 class="h3 mb-0 text-gray-800">Info Lowongan</h1>
 </div>
 
+@foreach ($loker as $data)
+    
 <div class="container-fluid">
   <div class="row">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Lowongan admin</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{$data->job_title}}</h5>
+        <p class="card-text">{{$data->job_desc}}</p>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Baca selengkapnya
         </button>
@@ -21,6 +23,7 @@ Lowongan
     </div>
   </div>
 </div>
+@endforeach
 
 
 {{-- modal --}}

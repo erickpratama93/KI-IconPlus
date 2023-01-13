@@ -38,8 +38,8 @@
                             </button>
                         </div>
                     </div>
-                </form>
-            </div>
+                </form> 
+            </div> 
         </li>
 
         <!-- Nav Item - User Information -->
@@ -52,7 +52,7 @@
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
-                </form>
+                </form> 
             </div>
         </li>
 
