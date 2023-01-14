@@ -50,4 +50,65 @@ class HomeController extends Controller
 
         ]);
     }
+
+
+
+    //user controller
+    public function lowongan(Request $request)
+    {
+        $loker = DB::table('jobs');
+        $loker = $loker->get();
+
+
+        return view('user.lowongan', [
+            'loker' => $loker,
+
+        ]);
+    }
+    public function news(Request $request)
+    {
+        $loker = DB::table('jobs');
+        $loker = $loker->get();
+
+
+        return view('user.news', [
+            'loker' => $loker,
+
+        ]);
+    }
+    public function guruTamu(Request $request)
+    {
+        $guru = DB::table('guest_teachers');
+        $guru = $guru->get();
+
+
+        return view('user.guru', [
+            'guru' => $guru,
+
+        ]);
+    }
+
+    //pkl controller
+    public function dataPkl(Request $request)
+    {
+        $loker = DB::table('jobs');
+        $loker = $loker->get();
+
+
+        return view('user.pkl.data', [
+            'loker' => $loker,
+
+        ]);
+    }
+    public function daftarPkl(Request $request)
+    {
+        $loker = DB::table('jobs');
+        $loker = $loker->get();
+
+
+        return view('user.pkl.daftar', [
+            'loker' => $loker,
+
+        ]);
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +20,18 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('user.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+//user route
+Route::middleware('auth')->group(function () {
+    Route::get('/News', [HomeController::class, 'news'])->name('news');
+    Route::get('/GuruTamu', [HomeController::class, 'guruTamu'])->name('guruTamu');
+    Route::get('/Lowongan', [HomeController::class, 'lowongan'])->name('lowongan');
+    Route::get('/DataPkl', [HomeController::class, 'dataPkl'])->name('pkl.data');
+    Route::get('/DaftarPkl', [HomeController::class, 'daftarPkl'])->name('pkl.daftar');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,9 +52,9 @@ Route::get('/user/info', function () {
 Route::get('/user/daftar', function () {
     return view('daftar');
 })->name('daftar');
-Route::get('/user/guruTamu', function () {
-    return view('guruTamu');
-})->name('guruTamu');
+// Route::get('/user/guruTamu', function () {
+//     return view('guruTamu');
+// })->name('guruTamu');
 Route::get('/user/detail-news', function () {
     return view('newsDetail');
 })->name('newsDetail');
@@ -52,7 +63,7 @@ Route::get('/user/detail-job', function () {
 })->name('detailJobs');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage')->middleware('auth');
-Route::get('user/lowongan', [App\Http\Controllers\HomeController::class, 'loker'])->name('lowongan')->middleware('auth');
+// Route::get('user/lowongan', [App\Http\Controllers\HomeController::class, 'loker'])->name('lowongan')->middleware('auth');
 Route::get('/', [App\Http\Controllers\LandingController::class, 'index']);
 
 
