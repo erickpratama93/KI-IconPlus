@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('job_title');
             $table->string('job_image')->nullable();
             $table->longText('job_desc')->nullable();   
-            $table->enum('status', ['approved', 'declined']);
             $table->timestamps(); 
         });
     }

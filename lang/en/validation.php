@@ -22,10 +22,7 @@ return [
     'alpha_dash' => 'The :attribute must only contain letters, numbers, dashes and underscores.',
     'alpha_num' => 'The :attribute must only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
-<<<<<<< HEAD
-=======
     'ascii' => 'The :attribute must only contain single-byte alphanumeric characters and symbols.',
->>>>>>> 91c34c7d3c747004fcdc4d5c894a4dfcb4e9fb3d
     'before' => 'The :attribute must be a date before :date.',
     'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
     'between' => [
@@ -145,10 +142,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'uppercase' => 'The :attribute must be uppercase.',
     'url' => 'The :attribute must be a valid URL.',
-<<<<<<< HEAD
-=======
     'ulid' => 'The :attribute must be a valid ULID.',
->>>>>>> 91c34c7d3c747004fcdc4d5c894a4dfcb4e9fb3d
     'uuid' => 'The :attribute must be a valid UUID.',
 
     /*
