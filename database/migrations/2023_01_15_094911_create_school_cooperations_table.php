@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('website');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('intern_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-
+            $table->foreign('intern_id')->references('id')->on('internships')->onDelete('cascade');
             $table->timestamps();
         });
     }

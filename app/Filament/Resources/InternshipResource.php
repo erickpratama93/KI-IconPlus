@@ -33,10 +33,19 @@ class InternshipResource extends Resource
                 Forms\Components\TextInput::make('position')
                 ->required()
                 ->maxLength(255), 
+                Forms\Components\TextInput::make('major')
+                ->required()
+                ->maxLength(255), 
+                Select::make('jenis_kelamin')
+                ->options([ 
+                    'Laki Laki' => 'Laki Laki',
+                    'Perempuan' => 'Perempuan', 
+                  
+                ])->default('Laki Laki'),
                 Select::make('status')
                 ->options([ 
                     'approved' => 'Approved',
-                    'pending' => 'Pending',
+                    'pending' => 'Pending', 
                    'declined' => 'Declined',
                 ])->default('pending'),
                 
@@ -50,6 +59,8 @@ class InternshipResource extends Resource
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('location')->limit(50),
                 Tables\Columns\TextColumn::make('position'),
+                Tables\Columns\TextColumn::make('major'),
+                Tables\Columns\TextColumn::make('Jenis Kelamin'),
                 Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
