@@ -564,23 +564,28 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <button onclick="myFunction()" class="btn btn-brand">Send Message</button>
+                                            <button onclick="send_handle()" class="btn btn-brand">Send
+                                                Message</button>
                                         </div>
                                         <div class="col-6">
                                             <span id="demo"></span>
                                         </div>
                                     </div>
                                     <script>
-                                        function myFunction() {
-                                            var a = document.getElementById("schoolname").value;
-                                            var b = document.getElementById("schoolemail").value;
-                                            var c = document.getElementById("picname").value;
-                                            var d = document.getElementById("nohp").value;
-                                            var e = document.getElementById("pesan").value;
-                                            document.getElementById("demo").innerHTML = '<button href="https://wa.me/+6285606683326?text=%20' + a + '%20' +
-                                                b + '%20' + c + '%20' + d + '%20' + e + " class="
-                                            btn btn - brand ">Send Message</button>';
+                                        function send_handle() {
 
+                                            let sekolah = document.getElementById("schoolname").value;
+
+                                            let email = document.getElementById("schoolemail").value;
+
+                                            let pic = document.getElementById("picname").value;
+                                            let hp = document.getElementById("nohp").value;
+                                            let pesan = document.getElementById("pesan").value;
+
+                                            var win = window.open(
+                                                `https://wa.me/6285606683326?text=---Ki-APP%20Message---%0ANama%20sekolah%20%3A%20${sekolah}%0AEmail%20%3A%20${email}%0ANama%20PIC%20%3A%20${pic}%0ANo%20WA%20%3A%20${hp}%0AIsi%20Pesan%20%3A%0A${pesan}`,
+                                                '_blank');
+                                            // win.focus();
                                         }
                                     </script>
                                 </form>
