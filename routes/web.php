@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Lowongan', [HomeController::class, 'lowongan'])->name('lowongan');
     Route::get('/DataPkl', [HomeController::class, 'dataPkl'])->name('pkl.data');
     Route::get('/DaftarPkl', [HomeController::class, 'daftarPkl'])->name('pkl.daftar');
+    Route::get('/test', [HomeController::class, 'test'])->name('test');
 });
 
 
