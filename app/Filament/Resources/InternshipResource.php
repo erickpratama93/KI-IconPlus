@@ -17,7 +17,7 @@ use Filament\Forms\Components\Select;
 class InternshipResource extends Resource
 {
     protected static ?string $model = Internship::class;
-    protected static ?string $navigationGroup = 'Landing Page';
+    protected static ?string $navigationGroup = 'Homepage';
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
     public static function form(Form $form): Form
