@@ -69,7 +69,7 @@
                 </ul>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     class="btn btn-brand ms-lg-3">Contact</a>
-                <a href="{{ url('/home') }}" class="btn btn-secondary
+                <a href={{ route('news') }} class="btn btn-secondary
                      ms-lg-3">Login</a>
             </div>
         </div>
@@ -309,7 +309,8 @@
                                     <a href="https://www.instagram.com/p/Cm3aJyGLlAM/?utm_source=ig_embed&amp;utm_campaign=loading"
                                         style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
                                         target="_blank">A post shared by PLN ICON PLUS JAWA TENGAH &amp; D.I YOGYAKARTA
-                                        (@pln.iconplus_jatengdiy)</a></p>
+                                        (@pln.iconplus_jatengdiy)</a>
+                                </p>
                             </div>
                         </blockquote>
                         <script async src="//www.instagram.com/embed.js"></script>
@@ -408,7 +409,8 @@
                                     <a href="https://www.instagram.com/p/Cm5g1QPLG-K/?utm_source=ig_embed&amp;utm_campaign=loading"
                                         style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
                                         target="_blank">A post shared by PLN ICON PLUS JAWA TENGAH &amp; D.I YOGYAKARTA
-                                        (@pln.iconplus_jatengdiy)</a></p>
+                                        (@pln.iconplus_jatengdiy)</a>
+                                </p>
                             </div>
                         </blockquote>
                         <script async src="//www.instagram.com/embed.js"></script>
@@ -457,7 +459,7 @@
                     <div class="intro">
                         <h6>NEWS</h6>
                         <h1>News</h1>
-                        
+
                     </div>
                 </div>
             </div>

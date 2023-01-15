@@ -67,12 +67,12 @@ class HomeController extends Controller
     }
     public function news(Request $request)
     {
-        $loker = DB::table('jobs');
-        $loker = $loker->get();
+        $news = DB::table('news');
+        $news = $news->get();
 
 
         return view('user.news', [
-            'loker' => $loker,
+            'news' => $news,
 
         ]);
     }
@@ -121,20 +121,5 @@ class HomeController extends Controller
             'data' => $data,
 
         ]);
-    }
-
-    public function pklstore(Request $request)
-    {
-      
-        //create post
-        Post::create([
-            'nama'     => $request->name,
-            'jk'     => $request->title,
-            'jurusan'   => $request->content
-            'sekolah'   => $request->content
-        ]);
-
-        //redirect to index
-        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }

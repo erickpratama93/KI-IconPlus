@@ -63,7 +63,7 @@ Route::get('/user/detail-job', function () {
     return view('detailJobs');
 })->name('detailJobs');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage')->middleware('auth');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage')->middleware('auth');
 // Route::get('user/lowongan', [App\Http\Controllers\HomeController::class, 'loker'])->name('lowongan')->middleware('auth');
 Route::get('/', [App\Http\Controllers\LandingController::class, 'index']);
 
