@@ -18,7 +18,7 @@ class GuestTeacherResource extends Resource
     protected static ?string $model = GuestTeacher::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
-    protected static ?string $navigationGroup = 'Landing Page';
+    protected static ?string $navigationGroup = 'Homepage';
     protected static ?string $recordTitleAttribute = 'title';
     public static function form(Form $form): Form
     { 

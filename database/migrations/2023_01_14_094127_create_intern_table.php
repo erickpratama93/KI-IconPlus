@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('position');
+            $table->string('major');
             $table->enum('status', ['approved','pending', 'declined']);
             $table->timestamps();  
         });
