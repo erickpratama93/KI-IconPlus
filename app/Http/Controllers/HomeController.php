@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Models\Internship;
+
 class HomeController extends Controller
 {
     /**
@@ -92,7 +94,7 @@ class HomeController extends Controller
     public function dataPkl(Request $request)
     {
         $data = DB::table('internships');
-        $data = $data->get();
+        $data = $data->get()->where('status', 'approved');
 
 
         return view('user.pkl.data', [
@@ -111,15 +113,52 @@ class HomeController extends Controller
 
         ]);
     }
-    public function test(Request $request)
+    public function internship(Request $request)
     {
         $data = DB::table('internships');
         $data = $data->get();
 
 
-        return view('user.test', [
-            'data' => $data,
-
+        return view('user.pkl.data', [
+            'pkl' => $data,
         ]);
+    }
+    public function storeInternship(Request $request)
+    { 
+        //validate form
+        // $this->validate($request, [
+        //     'name'     => 'required|',
+        //     'major'     => 'required|min:5',
+        //     'jenis_kelamin'   => 'required|min:2',
+        //     'asal_sekolah'   => 'required|min:5',
+        // ]);
+       
+
+        // Post::create([
+        //     'name'     => $request->name,
+        //     'major'   => $request->major,
+        //     'jenis_kelamin'   => $request->jenis_kelamin,
+        //     'asal_sekolah'   => $request->asal_sekolah,
+
+        // ]);
+
+        // $intern = new Internship;
+
+        // $intern->name = $request->name;
+        // $intern->major = $request->major;
+        // $intern->jenis_kelamin = $request->jenis_kelamin;
+        // $intern->asal_sekolah = $asal_sekolah;
+
+        // $intern->save();
+
+        DB::table('internships')->insert([
+            'name'     => $request->name,
+            'major'   => $request->major,
+            'jenis_kelamin'   => $request->jenis_kelamin,
+            'asal_sekolah'   => $request->asal_sekolah,
+        ]);
+
+        //redirect to index
+        return redirect()->route('pkl.daftar')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }

@@ -25,7 +25,7 @@
         @foreach ($news as $data)
             <div class="flex flex-wrap mb-6 mt-6 p-6 rounded-lg shadow-lg bg-white ">
                 <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
-                    <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
+                    <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
                         data-mdb-ripple="true" data-mdb-ripple-color="light">
                         <img src={{ url('storage/' . $data->news_image) }} class="w-full" alt="Louvre" />
                         <a href="#!">

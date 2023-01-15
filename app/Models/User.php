@@ -47,5 +47,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+     public function internships()
+    {
+        return $this->hasMany(Internship::class);
+    }
+        
 }
 

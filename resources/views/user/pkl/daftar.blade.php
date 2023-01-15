@@ -18,42 +18,45 @@
                         {{ __('Formulir Pendaftaran') }}
                     </div>
 
-                    <form action="#" method="POST">
+                    <form action="{{ route('intern') }}" method="POST">
+                        @csrf
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
                                     <div class="col-span-6 sm:col-span-3">
                                         <label for="nama" class="block text-sm font-medium text-gray-700">
                                             Nama Lengkap</label>
-                                        <input type="text" name="nama" id="nama" autocomplete="nama"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input name="name" type="text" id="nama" autocomplete="nama"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
+                                    {{-- <div class="col-span-6 sm:col-span-3">
+                                        <label for="jk" class="block text-sm font-medium text-gray-700">
+                                            Jenis Kelamin</label>
+                                        <input name="jenis_kelamin" type="text" id="jk" autocomplete="jk"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div> --}}
 
                                     <div class="col-span-6 sm:col-span-3">
                                         <label for="jk" class="block text-sm font-medium text-gray-700">Jenis
                                             Kelamin</label>
-                                        <select id="jk" name="jk" autocomplete="jk"
+                                        <select id="jk" name="jenis_kelamin" autocomplete="jk"
                                             class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                                             <option value="Laki Laki">laki laki</option>
                                             <option value="Perempuan">Perempuan</option>
                                         </select>
                                     </div>
-
-
-
-
-
                                     <div class="col-span-6">
                                         <label for="jurusan"
                                             class="block text-sm font-medium text-gray-700">Jurusan</label>
-                                        <input type="text" name="jurusan" id="jurusan" autocomplete="jurusan"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="text" name="major" id="major" autocomplete="jurusan"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6">
                                         <label for="sekolah" class="block text-sm font-medium text-gray-700">Asal
                                             Sekolah</label>
-                                        <input type="text" name="sekolah" id="sekolah" autocomplete="sekolah"
-                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <input type="text" name="asal_sekolah" id="asal_sekolah"
+                                            autocomplete="sekolah"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
 
@@ -115,12 +118,21 @@
                                                 <td
                                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                     <p class="mb-0 font-semibold leading-tight text-xs">
-                                                        {{ $data->location }}</p>
+                                                        {{ $data->major }}</p>
                                                 </td>
+
                                                 <td
                                                     class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
-                                                    <span
-                                                        class="bg-gradient-to-tl from-green-600 to-lime-400 px-3.6 text-xs rounded-1.8 py-2.2 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                                    @if ($data->status === 'pending')
+                                                        <span
+                                                            class="bg-yellow-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                                    @elseif ($data->status === 'approved')
+                                                        <span
+                                                            class="bg-green-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                                    @else
+                                                        <span
+                                                            class="bg-red-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                                    @endif
                                                 </td>
 
 
