@@ -91,24 +91,50 @@ class HomeController extends Controller
     //pkl controller
     public function dataPkl(Request $request)
     {
-        $loker = DB::table('jobs');
-        $loker = $loker->get();
+        $data = DB::table('internships');
+        $data = $data->get();
 
 
         return view('user.pkl.data', [
-            'loker' => $loker,
+            'data' => $data,
 
         ]);
     }
     public function daftarPkl(Request $request)
     {
-        $loker = DB::table('jobs');
-        $loker = $loker->get();
+        $data = DB::table('internships');
+        $data = $data->get();
 
 
         return view('user.pkl.daftar', [
-            'loker' => $loker,
+            'data' => $data,
 
         ]);
+    }
+    public function test(Request $request)
+    {
+        $data = DB::table('internships');
+        $data = $data->get();
+
+
+        return view('user.test', [
+            'data' => $data,
+
+        ]);
+    }
+
+    public function pklstore(Request $request)
+    {
+      
+        //create post
+        Post::create([
+            'nama'     => $request->name,
+            'jk'     => $request->title,
+            'jurusan'   => $request->content
+            'sekolah'   => $request->content
+        ]);
+
+        //redirect to index
+        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }
