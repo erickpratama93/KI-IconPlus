@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('location');
             $table->string('position');
             $table->string('major');
-            $table->enum('status', ['approved','pending', 'declined']);
+            $table->enum('jenis_kelamin', ['Laki Laki', 'Perempuan'])->default('Laki Laki');
+            $table->enum('status', ['approved','pending', 'declined'])->default('pending');
             $table->timestamps();  
         });
     }
@@ -27,7 +28,7 @@ return new class extends Migration
     /**
      * Reverse the migrations. 
      *
-     * @return void
+     * @return void 
      */ 
     public function down()
     {
