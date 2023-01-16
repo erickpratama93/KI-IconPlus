@@ -27,6 +27,9 @@ class LandingController extends Controller
         $news = DB::table('news');
         $news = $news->get();
 
+        $ig = DB::table('galleries');
+        $ig = $ig->get();
+
         // $slider = DB::table('sliders');
         // $slider = $slider->get();
 
@@ -36,6 +39,7 @@ class LandingController extends Controller
             'product' => $product,
             'review' => $review,
             'news' => $news,
+            'ig' => $ig,
 
         ]);
     }

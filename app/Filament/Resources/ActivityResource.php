@@ -24,12 +24,12 @@ class ActivityResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('activity_title')
+                Forms\Components\TextInput::make('activity_title') 
                     ->required()
                     ->maxLength(255),
                     Forms\Components\FileUpload::make('activity_image')
                     ->minSize(50)
-                    ->maxSize(1024),
+                    ->maxSize(5024),
                     Forms\Components\Textarea::make('activity_desc')
                     ->required()
                 ->minLength(5)

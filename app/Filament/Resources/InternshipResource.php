@@ -13,6 +13,8 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 
 class InternshipResource extends Resource
 {
@@ -37,6 +39,14 @@ class InternshipResource extends Resource
                 ->maxLength(255), 
                 Forms\Components\TextInput::make('asal_sekolah')
                 ->required(),
+                Forms\Components\TextInput::make('durasi_pkl')
+                ->required(),
+                Forms\Components\FileUpload::make('surat_pengajuan')
+                    ->minSize(50)
+                    ->maxSize(1024),
+                Forms\Components\FileUpload::make('surat_balasan')
+                    ->minSize(50)
+                    ->maxSize(1024),
                 Select::make('jenis_kelamin')
                 ->options([ 
                     'Laki Laki' => 'Laki Laki',
@@ -56,14 +66,17 @@ class InternshipResource extends Resource
     public static function table(Table $table): Table
     { 
         return $table
-            ->columns([
+            ->columns([ 
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('location')->limit(50),
                 Tables\Columns\TextColumn::make('position'),
                 Tables\Columns\TextColumn::make('major'),
                 Tables\Columns\TextColumn::make('asal_sekolah'),
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('durasi_pkl'),
+                Tables\Columns\TextColumn::make('surat_pengajuan'),
+                Tables\Columns\TextColumn::make('surat_balasan'),
+                Tables\Columns\TextColumn::make('status'), 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')

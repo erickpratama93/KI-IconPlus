@@ -29,7 +29,7 @@ class NewsResource extends Resource
                 ->maxLength(255),
                 Forms\Components\FileUpload::make('news_image')
                 ->minSize(50)
-                ->maxSize(1024),
+                ->maxSize(10024),
                 Forms\Components\Textarea::make('news_description')
                 ->required()
                 ->minLength(5)

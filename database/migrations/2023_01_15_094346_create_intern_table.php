@@ -19,7 +19,10 @@ return new class extends Migration
             $table->string('location'); 
             $table->string('position'); 
             $table->string('major');
-            $table->string('asal_sekolah');
+            $table->string('asal_sekolah'); 
+            $table->string('durasi_pkl'); 
+            $table->string('surat_pengajuan'); 
+            $table->string('surat_balasan'); 
             $table->enum('jenis_kelamin', ['Laki Laki', 'Perempuan'])->default('Laki Laki');
             $table->enum('status', ['approved','pending', 'declined'])->default('pending');
             $table->timestamps();  

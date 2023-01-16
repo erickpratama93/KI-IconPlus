@@ -16,7 +16,10 @@ class Internship extends Model
         'major',
         'jenis_kelamin',
         'status',
-        'asal_sekolah'
+        'asal_sekolah',
+        'durasi_pkl',
+        'surat_pengajuan',
+        'surat_balasan'
     ];
 
   

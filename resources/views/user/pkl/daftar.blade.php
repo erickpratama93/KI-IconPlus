@@ -52,6 +52,12 @@
                                             class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6">
+                                        <label for="durasi" class="block text-sm font-medium text-gray-700">Durasi
+                                            PKL</label>
+                                        <input type="text" name="durasi_pkl" id="durasi_pkl" autocomplete="durasi"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div class="col-span-6">
                                         <label for="sekolah" class="block text-sm font-medium text-gray-700">Asal
                                             Sekolah</label>
                                         <input type="text" name="asal_sekolah" id="asal_sekolah"
@@ -96,6 +102,9 @@
                                                 class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Jurusan</th>
                                             <th
+                                                class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                                Durasi PKL</th>
+                                            <th
                                                 class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Status</th>
 
@@ -119,6 +128,11 @@
                                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                     <p class="mb-0 font-semibold leading-tight text-xs">
                                                         {{ $data->major }}</p>
+                                                </td>
+                                                <td
+                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                                    <p class="mb-0 font-semibold leading-tight text-xs">
+                                                        {{ $data->durasi_pkl }}</p>
                                                 </td>
 
                                                 <td

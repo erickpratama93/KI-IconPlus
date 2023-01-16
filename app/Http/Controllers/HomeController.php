@@ -156,6 +156,7 @@ class HomeController extends Controller
             'major'   => $request->major,
             'jenis_kelamin'   => $request->jenis_kelamin,
             'asal_sekolah'   => $request->asal_sekolah,
+            'durasi_pkl'   => $request->durasi_pkl,
         ]);
 
         //redirect to index

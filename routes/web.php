@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 
 //user route
 Route::middleware('auth')->group(function () {
-    Route::get('/News', [HomeController::class, 'news'])->name('news');
+    Route::get('/news', [HomeController::class, 'news'])->name('news');
     Route::get('/GuruTamu', [HomeController::class, 'guruTamu'])->name('guruTamu');
     Route::get('/Lowongan', [HomeController::class, 'lowongan'])->name('lowongan');
     Route::get('/DataPkl', [HomeController::class, 'dataPkl'])->name('pkl.data');
@@ -40,28 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//homepage route
-// Route::get('/user/homepage', function () {
-//     return view('homepage');
-// })->name('homepage');
-Route::get('/user/info', function () {
-    return view('info');
-})->name('info');
-// Route::get('/user/lowongan', function () {
-//     return view('lowongan');
-// })->name('lowongan');
-Route::get('/user/daftar', function () {
-    return view('daftar');
-})->name('daftar');
-// Route::get('/user/guruTamu', function () {
-//     return view('guruTamu');
-// })->name('guruTamu');
-Route::get('/user/detail-news', function () {
-    return view('newsDetail');
-})->name('newsDetail');
-Route::get('/user/detail-job', function () {
-    return view('detailJobs');
-})->name('detailJobs');
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage')->middleware('auth');
 // Route::get('user/lowongan', [App\Http\Controllers\HomeController::class, 'loker'])->name('lowongan')->middleware('auth');

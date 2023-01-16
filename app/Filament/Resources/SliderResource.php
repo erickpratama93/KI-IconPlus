@@ -29,10 +29,10 @@ class SliderResource extends Resource
                     ->maxLength(255),
                     Forms\Components\FileUpload::make('slider_image')
                     ->minSize(50)
-                    ->maxSize(1024),
+                    ->maxSize(10024),
                     Forms\Components\Textarea::make('subtitle')
                     ->required()
-                ->minLength(5)
+                ->minLength(5) 
                     ->maxLength(5000),
             ]);
     }
