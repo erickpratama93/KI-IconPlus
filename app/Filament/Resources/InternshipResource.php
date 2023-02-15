@@ -41,12 +41,16 @@ class InternshipResource extends Resource
                 ->required(),
                 Forms\Components\TextInput::make('durasi_pkl')
                 ->required(),
+                Forms\Components\DatePicker::make('tanggal_masuk')
+                ->required(),
+                Forms\Components\DatePicker::make('tanggal_keluar')
+                ->required(),
                 Forms\Components\FileUpload::make('surat_pengajuan')
                     ->minSize(50)
-                    ->maxSize(1024),
+                    ->maxSize(5024),
                 Forms\Components\FileUpload::make('surat_balasan')
                     ->minSize(50)
-                    ->maxSize(1024),
+                    ->maxSize(5024),
                 Select::make('jenis_kelamin')
                 ->options([ 
                     'Laki Laki' => 'Laki Laki',
@@ -74,13 +78,15 @@ class InternshipResource extends Resource
                 Tables\Columns\TextColumn::make('asal_sekolah'),
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
                 Tables\Columns\TextColumn::make('durasi_pkl'),
+                Tables\Columns\TextColumn::make('tanggal_masuk')->date(),
+                Tables\Columns\TextColumn::make('tanggal_keluar')->date(),
                 Tables\Columns\TextColumn::make('surat_pengajuan'),
-                Tables\Columns\TextColumn::make('surat_balasan'),
+                Tables\Columns\TextColumn::make('surat_balasan'), 
                 Tables\Columns\TextColumn::make('status'), 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                Tables\Columns\TextColumn::make('updated_at') 
+                    ->dateTime(), 
             ])
             ->filters([
                 //
