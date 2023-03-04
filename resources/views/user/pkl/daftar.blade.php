@@ -18,7 +18,7 @@
                         {{ __('Formulir Pendaftaran') }}
                     </div>
 
-                    <form action="{{ route('intern') }}" method="POST">
+                    <form action="{{ route('intern') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="overflow-hidden shadow sm:rounded-md">
                             <div class="bg-white px-4 py-5 sm:p-6">
@@ -63,6 +63,12 @@
                                         <input type="text" name="asal_sekolah" id="asal_sekolah"
                                             autocomplete="sekolah"
                                             class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div class="col-span-6">
+                                        <label for="sekolah" class="block text-sm font-medium text-gray-700">surat
+                                            pengajuan</label>
+                                        <input type="file" name="file" id="file">
+
                                     </div>
 
 

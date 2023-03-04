@@ -155,7 +155,7 @@
                 <div class="p-2 bd-highlight">
                     <div class="row text-center justify-content-around align-items-center">
                         <div class="col-lg-3 col-sm-6 ">
-                            <h1 class="display-4">12</h1>
+                            <h1 class="display-4">{{ $count }}</h1>
                             <p class="mb-0">Jumlah Sekolah MOU</p>
                         </div>
                         <div class="col-lg-6 col-lg-6">
@@ -403,7 +403,7 @@
                 <script>
                     document.write(new Date().getFullYear())
                 </script>. All rights Reserved
-            </p> Distributed By <a hrefs="https://themewagon.com">PLN Icon Plus JBTG</a>
+            </p> Distributed By <a>PLN Icon Plus JBTG</a>
         </div>
     </footer>
 
@@ -557,35 +557,50 @@
         //  // Adding layer to the map
         //  map.addLayer(layer);
 
-        //
-        // Where you want to render the map.
-        var element = document.getElementById('map');
+        //========================================================
+        // // Where you want to render the map.
+        // var element = document.getElementById('map');
 
-        // Height has to be set. You can do this in CSS too.
-        // element.style = 'height:300px;';
+        // // Height has to be set. You can do this in CSS too.
+        // // element.style = 'height:300px;';
 
-        // Create Leaflet map on map element.
-        var map = L.map(element);
+        // // Create Leaflet map on map element.
+        // var map = L.map(element);
 
-        // Add OSM tile layer to the Leaflet map.
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        // // Add OSM tile layer to the Leaflet map.
+        // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        // }).addTo(map);
+
+        // // Target's GPS coordinates.
+        // var target = L.latLng('-6.9994', '110.4277');
+        // var a = L.latLng('-6.9537', '110.1517');
+        // var b = L.latLng('-7.1377', '110.4469');
+        // var c = L.latLng('-6.9728', '110.5019');
+
+        // // Set map's center to target with zoom 10.
+        // map.setView(target, 10);
+
+        // // Place a marker on the same location.
+        // L.marker(target).addTo(map);
+        // L.marker(a).addTo(map);
+        // L.marker(b).addTo(map);
+        // L.marker(c).addTo(map);
+
+        //terbaru
+
+        var map = L.map('map').setView([-6.995016, 110.418427], 8);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
         }).addTo(map);
 
-        // Target's GPS coordinates.
-        var target = L.latLng('-6.9994', '110.4277');
-        var a = L.latLng('-6.9537', '110.1517');
-        var b = L.latLng('-7.1377', '110.4469');
-        var c = L.latLng('-6.9728', '110.5019');
+        var locations = <?php echo json_encode($locations); ?>;
+        locations.forEach(function(location) {
+            L.marker([location.latitude, location.longitude]).addTo(map);
+        });
 
-        // Set map's center to target with zoom 14.
-        map.setView(target, 10);
-
-        // Place a marker on the same location.
-        L.marker(target).addTo(map);
-        L.marker(a).addTo(map);
-        L.marker(b).addTo(map);
-        L.marker(c).addTo(map);
+        // map.setView(locations, 10);
     </script>
 
 </body>

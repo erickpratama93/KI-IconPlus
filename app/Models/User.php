@@ -47,10 +47,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-     public function internships()
+    //  public function internships()
+    // {
+    //     return $this->hasMany(Internship::class);
+    // }
+    public function internships()
     {
         return $this->hasMany(Internship::class);
     }
-        
 }
-

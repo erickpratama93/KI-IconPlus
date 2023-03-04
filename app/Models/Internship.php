@@ -22,17 +22,10 @@ class Internship extends Model
         'surat_balasan'
     ];
 
-  
-       
-     /**
-      * Get the user that owns the Internship
-      *
-      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-      */
-     public function user()
-     {
-         return $this->belongsTo(User::class);
-     }
-    
-    
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

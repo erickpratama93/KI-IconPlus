@@ -30,6 +30,9 @@ class LandingController extends Controller
         $ig = DB::table('galleries');
         $ig = $ig->get();
 
+        $locations = DB::table('locations')->select('latitude', 'longitude')->get();
+        $count = DB::table('users')->count();
+
         // $slider = DB::table('sliders');
         // $slider = $slider->get();
 
@@ -40,6 +43,8 @@ class LandingController extends Controller
             'review' => $review,
             'news' => $news,
             'ig' => $ig,
+            'locations' => $locations,
+            'count' => $count,
 
         ]);
     }

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\Models\Internship;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -93,8 +94,12 @@ class HomeController extends Controller
     //pkl controller
     public function dataPkl(Request $request)
     {
+        $user = auth()->user();
+
         $data = DB::table('internships');
         $data = $data->get()->where('status', 'approved');
+        $data = Internship::where('user_id', $user->id)->get();
+
 
 
         return view('user.pkl.data', [
@@ -104,8 +109,11 @@ class HomeController extends Controller
     }
     public function daftarPkl(Request $request)
     {
+        $user = auth()->user();
+
         $data = DB::table('internships');
         $data = $data->get();
+        $data = Internship::where('user_id', $user->id)->get();
 
 
         return view('user.pkl.daftar', [
@@ -113,18 +121,18 @@ class HomeController extends Controller
 
         ]);
     }
-    public function internship(Request $request)
-    {
-        $data = DB::table('internships');
-        $data = $data->get();
+    // public function internship(Request $request)
+    // {
+    //     $data = DB::table('internships');
+    //     $data = $data->get();
 
 
-        return view('user.pkl.data', [
-            'pkl' => $data,
-        ]);
-    }
+    //     return view('user.pkl.data', [
+    //         'pkl' => $data,
+    //     ]);
+    // }
     public function storeInternship(Request $request)
-    { 
+    {
         //validate form
         // $this->validate($request, [
         //     'name'     => 'required|',
@@ -132,7 +140,7 @@ class HomeController extends Controller
         //     'jenis_kelamin'   => 'required|min:2',
         //     'asal_sekolah'   => 'required|min:5',
         // ]);
-       
+
 
         // Post::create([
         //     'name'     => $request->name,
@@ -142,22 +150,39 @@ class HomeController extends Controller
 
         // ]);
 
-        // $intern = new Internship;
-
-        // $intern->name = $request->name;
-        // $intern->major = $request->major;
-        // $intern->jenis_kelamin = $request->jenis_kelamin;
-        // $intern->asal_sekolah = $asal_sekolah;
-
-        // $intern->save();
-
-        DB::table('internships')->insert([
-            'name'     => $request->name,
-            'major'   => $request->major,
-            'jenis_kelamin'   => $request->jenis_kelamin,
-            'asal_sekolah'   => $request->asal_sekolah,
-            'durasi_pkl'   => $request->durasi_pkl,
+        $request->validate([
+            'file' => 'required|file|mimes:pdf,doc,docx|max:2048',
         ]);
+
+        $file = $request->file('file');
+        $filename = $file->getClientOriginalName();
+
+        $file->storeAs('uploads', $filename);
+
+        $file_path = storage_path('app/uploads/' . $filename);
+
+        $user = auth()->user();
+
+        $intern = new Internship;
+
+        $intern->name = $request->name;
+        $intern->major = $request->major;
+        $intern->jenis_kelamin = $request->jenis_kelamin;
+        $intern->asal_sekolah = $request->asal_sekolah;
+        $intern->durasi_pkl = $request->durasi_pkl;
+        $intern->surat_pengajuan = $filename;
+        // $intern->file_path = $file_path;
+
+        $user->internships()->save($intern);
+
+
+        // DB::table('internships')->insert([
+        //     'name'     => $request->name,
+        //     'major'   => $request->major,
+        //     'jenis_kelamin'   => $request->jenis_kelamin,
+        //     'asal_sekolah'   => $request->asal_sekolah,
+        //     'durasi_pkl'   => $request->durasi_pkl,
+        // ]);
 
         //redirect to index
         return redirect()->route('pkl.daftar')->with(['success' => 'Data Berhasil Disimpan!']);
