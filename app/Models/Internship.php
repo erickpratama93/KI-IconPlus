@@ -19,7 +19,9 @@ class Internship extends Model
         'asal_sekolah',
         'durasi_pkl',
         'surat_pengajuan',
-        'surat_balasan'
+        'path_pengajuan',
+        'surat_balasan',
+        'path_balasan'
     ];
 
 

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
-
 use App\Models\Internship;
 use App\Models\User;
+use Illuminate\Support\Facades\View;
+
 
 class HomeController extends Controller
 {
@@ -151,7 +153,7 @@ class HomeController extends Controller
         // ]);
 
         $request->validate([
-            'file' => 'required|file|mimes:pdf,doc,docx|max:2048',
+            'file' => 'required|file|mimes:pdf|max:10485',
         ]);
 
         $file = $request->file('file');
@@ -159,7 +161,8 @@ class HomeController extends Controller
 
         $file->storeAs('uploads', $filename);
 
-        $file_path = storage_path('app/uploads/' . $filename);
+        // $file_path = storage_path('app/uploads/' . $filename);
+        $file_path = $file->storeAs('uploads', $filename, 'public');
 
         $user = auth()->user();
 
@@ -170,8 +173,10 @@ class HomeController extends Controller
         $intern->jenis_kelamin = $request->jenis_kelamin;
         $intern->asal_sekolah = $request->asal_sekolah;
         $intern->durasi_pkl = $request->durasi_pkl;
+        $intern->tanggal_masuk = $request->tanggal_masuk;
+        $intern->tanggal_keluar = $request->tanggal_keluar;
         $intern->surat_pengajuan = $filename;
-        // $intern->file_path = $file_path;
+        $intern->path_pengajuan =  '/storage/' . $file_path;
 
         $user->internships()->save($intern);
 
@@ -186,5 +191,22 @@ class HomeController extends Controller
 
         //redirect to index
         return redirect()->route('pkl.daftar')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+    // public function download(internship $file)
+    // {
+    //     return response()->download(storage_path("app/uploads/{$file->path_pengajuan}"));
+    // }
+
+
+
+    public function printDocument($id)
+    {
+        $intern = internship::find($id);
+
+        if (!$intern) {
+            abort(404);
+        }
+
+        return View::make('print')->with('document', $intern);
     }
 }
