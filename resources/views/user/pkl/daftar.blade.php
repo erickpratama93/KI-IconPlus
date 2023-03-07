@@ -123,6 +123,9 @@
                                                 class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Surat Pengajuan</th>
                                             <th
+                                                class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                                Surat balasan</th>
+                                            <th
                                                 class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Status</th>
 
@@ -154,12 +157,20 @@
                                                 </td>
                                                 <td
                                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                                    <a href={{ route('print', ['id' => $data->id]) }}
+                                                    <a href="{{ asset('/storage/' . $data->path_pengajuan) }}"
+                                                        onclick="window.open(this.href); return false"
                                                         class="bg-gray-200 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
 
                                                         <span>Download</span></a>
                                                 </td>
+                                                <td
+                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                                    <a href="{{ asset('/storage/' . $data->path_balasan) }}"
+                                                        onclick="window.open(this.href); return false"
+                                                        class="bg-gray-200 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">
 
+                                                        <span>Download</span></a>
+                                                </td>
                                                 <td
                                                     class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                                                     @if ($data->status === 'pending')

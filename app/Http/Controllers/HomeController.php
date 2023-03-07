@@ -176,7 +176,7 @@ class HomeController extends Controller
         $intern->tanggal_masuk = $request->tanggal_masuk;
         $intern->tanggal_keluar = $request->tanggal_keluar;
         $intern->surat_pengajuan = $filename;
-        $intern->path_pengajuan =  '/storage/' . $file_path;
+        $intern->path_pengajuan =  $file_path;
 
         $user->internships()->save($intern);
 

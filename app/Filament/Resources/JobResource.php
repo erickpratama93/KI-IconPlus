@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
+
 class JobResource extends Resource
 {
     protected static ?string $model = Job::class;
@@ -29,12 +30,12 @@ class JobResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('job_image')
-                ->minSize(50)
-                ->maxSize(10024),
-                Forms\Components\Textarea::make('job_desc')
-                ->required(),
-               
-                
+                    ->minSize(50)
+                    ->maxSize(10024),
+                Forms\Components\MarkdownEditor::make('job_desc')
+                    ->required(),
+
+
             ]);
     }
 
@@ -60,20 +61,20 @@ class JobResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListJobs::route('/'),
             'create' => Pages\CreateJob::route('/create'),
-            'edit' => Pages\EditJob::route('/{record}/edit'), 
+            'edit' => Pages\EditJob::route('/{record}/edit'),
         ];
-    }    
+    }
 }

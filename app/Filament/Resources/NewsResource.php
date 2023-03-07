@@ -25,15 +25,14 @@ class NewsResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('news_title')
-                ->required()
-                ->maxLength(255),
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\FileUpload::make('news_image')
-                ->minSize(50)
-                ->maxSize(10024),
-                Forms\Components\Textarea::make('news_description')
-                ->required()
-                ->minLength(5)
-                    ->maxLength(5000),
+                    ->minSize(50)
+                    ->maxSize(10024),
+                Forms\Components\MarkdownEditor::make('news_description')
+                    ->required(),
+
             ]);
     }
 
@@ -60,14 +59,14 @@ class NewsResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -76,5 +75,5 @@ class NewsResource extends Resource
             'view' => Pages\ViewNews::route('/{record}'),
             'edit' => Pages\EditNews::route('/{record}/edit'),
         ];
-    }    
+    }
 }
