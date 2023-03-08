@@ -60,7 +60,7 @@
                                 duration-150
                                 ease-in-out"
                                         data-bs-dismiss="modal">
-                                        <a href="https://wa.me/6289616658515?text=---Ki-APP%20Message---%0AHai%20admin%20Kelas%20Industri%20PLN%20Icon%20Plus%2C%20saya%20ingin%20order%20paket%20guru%20tamu"
+                                        <a href="https://wa.me/6289665667111?text=---Ki-APP%20Message---%0AHai%20admin%20Kelas%20Industri%20PLN%20Icon%20Plus%2C%20saya%20ingin%20order%20paket%20guru%20tamu"
                                             class="">Pesan Sekarang</a>
                                     </button>
                                     <button type="button"
