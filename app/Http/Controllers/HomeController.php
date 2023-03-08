@@ -100,7 +100,7 @@ class HomeController extends Controller
 
         // $data = DB::table('internships');
         // $data = $data->get()->where('status', 'approved');
-        $data = Internship::where('status', 'approved')->get();
+        $data = Internship::where([['user_id', $user->id], ['status', 'approved']])->get();
 
 
 
