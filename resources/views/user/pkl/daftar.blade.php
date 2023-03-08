@@ -125,9 +125,9 @@
                                             <th
                                                 class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Surat balasan</th>
-                                            {{-- <th
+                                            <th
                                                 class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                Status</th> --}}
+                                                Status</th>
 
                                         </tr>
                                     </thead>
@@ -183,7 +183,7 @@
                             @endif
 
                             </td>
-                            {{-- <td
+                            <td
                                 class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                                 @if ($data->status === 'pending')
                                     <span
@@ -195,7 +195,7 @@
                                     <span
                                         class="bg-red-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
                                 @endif
-                            </td> --}}
+                            </td>
 
 
                             </tr>
