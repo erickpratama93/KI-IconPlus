@@ -23,7 +23,10 @@ class Internship extends Model
         'surat_balasan',
         'path_balasan'
     ];
-
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtoupper($value);
+    }
 
 
     public function user()
