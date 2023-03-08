@@ -365,7 +365,11 @@
                             <div class="content">
                                 <small>{{ $data->created_at }}</small>
                                 <h5>{{ $data->news_title }}</h5>
-                                <p>{{ $data->news_description }}</p>
+                                <p>
+                                    <!-- {{ $data->news_description}} -->
+                                {{ substr(strip_tags($data->news_description), 0, 50) }}
+                                {{ strlen(strip_tags($data->news_description)) > 50 ? "...Baca Selengkapnya" : "" }}
+                                </p>
                             </div>
                         </article>
                     </div>
