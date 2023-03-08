@@ -33,7 +33,8 @@ class ReviewsResource extends Resource
                 ->maxLength(255),
                 Forms\Components\FileUpload::make('reviews_image')
                 ->minSize(50)
-                ->maxSize(1024),
+                ->maxSize(1024)
+                ->preserveFilenames(),
                 Forms\Components\Textarea::make('reviews_message')
                 ->required()
                 ->minLength(5)

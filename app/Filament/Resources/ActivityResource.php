@@ -29,7 +29,8 @@ class ActivityResource extends Resource
                     ->maxLength(255),
                     Forms\Components\FileUpload::make('activity_image')
                     ->minSize(50)
-                    ->maxSize(5024),
+                    ->maxSize(5024)
+                    ->preserveFilenames(),
                     Forms\Components\Textarea::make('activity_desc')
                     ->required()
                 ->minLength(5)

@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Actions\Action;
 
 class InternshipResource extends Resource
 {
@@ -42,15 +43,22 @@ class InternshipResource extends Resource
                 Forms\Components\TextInput::make('durasi_pkl')
                 ->required(),
                 Forms\Components\DatePicker::make('tanggal_masuk')
-                ->required(),
+                ->required()
+                ->displayFormat('d/m/Y'),
                 Forms\Components\DatePicker::make('tanggal_keluar')
-                ->required(),
+                ->required()
+                ->displayFormat('d/m/Y'),
                 Forms\Components\FileUpload::make('surat_pengajuan')
-                    ->minSize(50)
-                    ->maxSize(5024),
+                    ->minSize(50) 
+                    ->maxSize(5024)
+                    ->preserveFilenames()
+                    ->enableDownload()
+                    ->acceptedFileTypes(['application/pdf']),
                 Forms\Components\FileUpload::make('surat_balasan')
                     ->minSize(50)
-                    ->maxSize(5024),
+                    ->maxSize(5024)
+                    ->preserveFilenames()
+                    ->acceptedFileTypes(['application/pdf']),
                 Select::make('jenis_kelamin')
                 ->options([ 
                     'Laki Laki' => 'Laki Laki',
@@ -78,8 +86,8 @@ class InternshipResource extends Resource
                 Tables\Columns\TextColumn::make('asal_sekolah'),
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
                 Tables\Columns\TextColumn::make('durasi_pkl'),
-                Tables\Columns\TextColumn::make('tanggal_masuk')->date(),
-                Tables\Columns\TextColumn::make('tanggal_keluar')->date(),
+                Tables\Columns\TextColumn::make('tanggal_masuk')->date('d/m/Y'),
+                Tables\Columns\TextColumn::make('tanggal_keluar')->date('d/m/Y'),
                 Tables\Columns\TextColumn::make('surat_pengajuan'),
                 Tables\Columns\TextColumn::make('surat_balasan'), 
                 Tables\Columns\TextColumn::make('status'), 

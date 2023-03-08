@@ -41,7 +41,7 @@ class UserResource extends Resource
                     ->dehydrateStateUsing(fn ($state) => Hash::make($state))
                     ->maxLength(255),
                      
-            ]);
+            ]); 
     }
 
     public static function table(Table $table): Table

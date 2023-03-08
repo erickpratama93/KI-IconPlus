@@ -29,7 +29,8 @@ class ProductsResource extends Resource
                     ->maxLength(255),
                     Forms\Components\FileUpload::make('product_image')
                     ->minSize(50)
-                    ->maxSize(1024),
+                    ->maxSize(1024)
+                    ->preserveFilenames(),
                     Forms\Components\Textarea::make('product_description')
                     ->required()
                     ->minLength(5)

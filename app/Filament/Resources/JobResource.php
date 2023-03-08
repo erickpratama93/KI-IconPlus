@@ -30,7 +30,8 @@ class JobResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('job_image')
                 ->minSize(50)
-                ->maxSize(10024),
+                ->maxSize(5024)
+                ->preserveFilenames(),
                 Forms\Components\Textarea::make('job_desc')
                 ->required(),
                

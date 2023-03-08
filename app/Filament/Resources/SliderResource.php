@@ -29,7 +29,8 @@ class SliderResource extends Resource
                     ->maxLength(255),
                     Forms\Components\FileUpload::make('slider_image')
                     ->minSize(50)
-                    ->maxSize(10024),
+                    ->maxSize(5024)
+                    ->preserveFilenames(),
                     Forms\Components\Textarea::make('subtitle')
                     ->required()
                 ->minLength(5) 
