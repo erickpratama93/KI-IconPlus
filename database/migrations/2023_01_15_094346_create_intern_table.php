@@ -22,10 +22,12 @@ return new class extends Migration
             $table->string('major');
             $table->string('asal_sekolah');
             $table->string('durasi_pkl');
-            $table->string('surat_pengajuan');
             $table->date('tanggal_masuk');
             $table->date('tanggal_keluar');
+            $table->string('surat_pengajuan');
+            $table->string('path_pengajuan');
             $table->string('surat_balasan');
+            $table->string('path_balasan');
             $table->enum('jenis_kelamin', ['Laki Laki', 'Perempuan'])->default('Laki Laki');
             $table->enum('status', ['approved', 'pending', 'declined'])->default('pending');
             $table->timestamps();

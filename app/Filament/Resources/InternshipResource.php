@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Actions\Action;
+use League\Flysystem\Visibility;
 
 class InternshipResource extends Resource
 {
@@ -28,57 +28,62 @@ class InternshipResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                ->required()
-                ->maxLength(255), 
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('location')
-                ->required(),
+                    ->required(),
                 Forms\Components\TextInput::make('position')
-                ->required()
-                ->maxLength(255), 
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('major')
-                ->required()
-                ->maxLength(255), 
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('asal_sekolah')
-                ->required(),
+                    ->required(),
                 Forms\Components\TextInput::make('durasi_pkl')
-                ->required(),
+                    ->required(),
                 Forms\Components\DatePicker::make('tanggal_masuk')
-                ->required()
-                ->displayFormat('d/m/Y'),
+                    ->required(),
                 Forms\Components\DatePicker::make('tanggal_keluar')
-                ->required()
-                ->displayFormat('d/m/Y'),
-                Forms\Components\FileUpload::make('surat_pengajuan')
-                    ->minSize(50) 
-                    ->maxSize(5024)
+                    ->required(),
+                Forms\Components\FileUpload::make('path_pengajuan')
                     ->preserveFilenames()
+                    ->disk('local')
+                    ->directory('uploads')
                     ->enableDownload()
-                    ->acceptedFileTypes(['application/pdf']),
-                Forms\Components\FileUpload::make('surat_balasan')
+                    ->enableOpen()
+                    ->minSize(50)
+                    ->maxSize(5024),
+                Forms\Components\FileUpload::make('path_balasan')
+                    ->preserveFilenames()
+                    ->disk('local')
+                    ->directory('uploads')
+                    ->enableDownload()
+                    ->enableOpen()
                     ->minSize(50)
                     ->maxSize(5024)
                     ->preserveFilenames()
                     ->acceptedFileTypes(['application/pdf']),
                 Select::make('jenis_kelamin')
-                ->options([ 
-                    'Laki Laki' => 'Laki Laki',
-                    'Perempuan' => 'Perempuan', 
-                  
-                ])->default('Laki Laki'),
+                    ->options([
+                        'Laki Laki' => 'Laki Laki',
+                        'Perempuan' => 'Perempuan',
+
+                    ])->default('Laki Laki'),
                 Select::make('status')
-                ->options([ 
-                    'approved' => 'Approved',
-                    'pending' => 'Pending', 
-                   'declined' => 'Declined',
-                ])->default('pending'),
-                
+                    ->options([
+                        'approved' => 'Approved',
+                        'pending' => 'Pending',
+                        'declined' => 'Declined',
+                    ])->default('pending'),
+
             ]);
     }
 
     public static function table(Table $table): Table
-    { 
+    {
         return $table
-            ->columns([ 
+            ->columns([
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('location')->limit(50),
                 Tables\Columns\TextColumn::make('position'),
@@ -89,12 +94,12 @@ class InternshipResource extends Resource
                 Tables\Columns\TextColumn::make('tanggal_masuk')->date('d/m/Y'),
                 Tables\Columns\TextColumn::make('tanggal_keluar')->date('d/m/Y'),
                 Tables\Columns\TextColumn::make('surat_pengajuan'),
-                Tables\Columns\TextColumn::make('surat_balasan'), 
-                Tables\Columns\TextColumn::make('status'), 
+                Tables\Columns\TextColumn::make('surat_balasan'),
+                Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at') 
-                    ->dateTime(), 
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime(),
             ])
             ->filters([
                 //
@@ -106,14 +111,14 @@ class InternshipResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -121,10 +126,9 @@ class InternshipResource extends Resource
             'create' => Pages\CreateInternship::route('/create'),
             'edit' => Pages\EditInternship::route('/{record}/edit'),
         ];
-    }    
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 }
- 

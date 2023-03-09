@@ -29,13 +29,6 @@
                                         <input name="name" type="text" id="nama" autocomplete="nama"
                                             class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
-                                    {{-- <div class="col-span-6 sm:col-span-3">
-                                        <label for="jk" class="block text-sm font-medium text-gray-700">
-                                            Jenis Kelamin</label>
-                                        <input name="jenis_kelamin" type="text" id="jk" autocomplete="jk"
-                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div> --}}
-
                                     <div class="col-span-6 sm:col-span-3">
                                         <label for="jk" class="block text-sm font-medium text-gray-700">Jenis
                                             Kelamin</label>
@@ -52,12 +45,6 @@
                                             class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6">
-                                        <label for="durasi" class="block text-sm font-medium text-gray-700">Durasi
-                                            PKL</label>
-                                        <input type="text" name="durasi_pkl" id="durasi_pkl" autocomplete="durasi"
-                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
-                                    <div class="col-span-6">
                                         <label for="sekolah" class="block text-sm font-medium text-gray-700">Asal
                                             Sekolah</label>
                                         <input type="text" name="asal_sekolah" id="asal_sekolah"
@@ -65,8 +52,30 @@
                                             class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6">
+                                        <label for="durasi" class="block text-sm font-medium text-gray-700">Durasi
+                                            PKL</label>
+                                        <input type="text" name="durasi_pkl" id="durasi_pkl" autocomplete="durasi"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div class="col-span-6 sm:col-span-3">
+                                        <label for="tanggal_masuk" class="block text-sm font-medium text-gray-700">
+                                            Tanggal Masuk</label>
+                                        <input name="tanggal_masuk" type="date" id="date_field" autocomplete="nama"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+                                    <div class="col-span-6
+                                            sm:col-span-3">
+                                        <label for="tanggal_keluar" class="block text-sm font-medium text-gray-700">
+                                            Tanggal Keluar</label>
+                                        <input name="tanggal_keluar" type="date" id="date_field" autocomplete="nama"
+                                            class="mt-1 block uppercase w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                    </div>
+
+                                    <div class="col-span-6">
                                         <label for="sekolah" class="block text-sm font-medium text-gray-700">surat
-                                            pengajuan</label>
+                                            pengajuan <span
+                                                class="bg-yellow-500 px-1 text-xs rounded py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">PDF
+                                                FILE</span></label>
                                         <input type="file" name="file" id="file">
 
                                     </div>
@@ -111,8 +120,14 @@
                                                 class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Durasi PKL</th>
                                             <th
+                                                class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                                Surat Pengajuan</th>
+                                            <th
+                                                class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                                Surat balasan</th>
+                                            {{-- <th
                                                 class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                Status</th>
+                                                Status</th> --}}
 
                                         </tr>
                                     </thead>
@@ -140,33 +155,60 @@
                                                     <p class="mb-0 font-semibold leading-tight text-xs">
                                                         {{ $data->durasi_pkl }}</p>
                                                 </td>
-
                                                 <td
-                                                    class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
-                                                    @if ($data->status === 'pending')
-                                                        <span
-                                                            class="bg-yellow-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
-                                                    @elseif ($data->status === 'approved')
-                                                        <span
-                                                            class="bg-green-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
-                                                    @else
-                                                        <span
-                                                            class="bg-red-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
-                                                    @endif
+                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                                    <a href="{{ asset('/storage/' . $data->path_pengajuan) }}"
+                                                        onclick="window.open(this.href); return false"
+                                                        class="inline-block rounded-full bg-neutral-50 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#fbfbfb] transition duration-150 ease-in-out hover:bg-yellow-200 ">
+
+                                                        <span>Lihat Surat</span></a>
                                                 </td>
+                                                <td
+                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+
+                                                    @if (!$data->path_balasan)
+                                                        <span class="text-sm ">Tunggu Balasan</span>
+                                                        <div style="display: none;">
+                                                    @endif
+
+                                                    <a href="{{ asset('/storage/' . $data->path_balasan) }}"
+                                                        onclick="window.open(this.href); return false"
+                                                        class="inline-block rounded-full bg-green-500 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#fbfbfb] transition duration-150 ease-in-out hover:bg-yellow-200 ">
+
+                                                        <span>Lihat Surat</span></a>
 
 
-                                            </tr>
-                                        @endforeach
-
-                                    </tbody>
-                                </table>
+                                                    @if (!$data->path_balasan)
                             </div>
+                            @endif
+
+                            </td>
+                            {{-- <td
+                                class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
+                                @if ($data->status === 'pending')
+                                    <span
+                                        class="bg-yellow-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                @elseif ($data->status === 'approved')
+                                    <span
+                                        class="bg-green-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                @else
+                                    <span
+                                        class="bg-red-500 px-3 text-xs rounded py-3 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $data->status }}</span>
+                                @endif
+                            </td> --}}
+
+
+                            </tr>
+                            @endforeach
+
+                            </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script>
@@ -175,7 +217,23 @@
 
         });
     </script>
+    <script>
+        const dateField = document.getElementById('date_field');
+        const dateValue = dateField.value;
+        const dateObject = new Date(dateValue);
 
+        const year = dateObject.getFullYear();
+        const month = String(dateObject.getMonth() + 1).padStart(2, '0');
+        const day = String(dateObject.getDate()).padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day}`;
+        dateField.value = formattedDate;
+    </script>
+    {{-- <script>
+        window.onload = function() {
+            window.print();
+        };
+    </script> --}}
 
 
 

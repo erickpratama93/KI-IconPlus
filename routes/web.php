@@ -31,6 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/DataPkl', [HomeController::class, 'dataPkl'])->name('pkl.data');
     Route::get('/DaftarPkl', [HomeController::class, 'daftarPkl'])->name('pkl.daftar');
     Route::post('/Daftarpkl/daftar', [HomeController::class, 'storeInternship'])->name('intern');
+    // Route::get('/Daftarpkls/{id}/print', [HomeController::class, 'printDocument'])->name('print');
+    // Route::get('/download/', 'FileController@download');
+    // Route::get('/documents/{id}/print', 'DocumentController@printDocument');
+
+
 });
 
 
