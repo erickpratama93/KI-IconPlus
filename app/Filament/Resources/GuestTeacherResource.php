@@ -21,20 +21,20 @@ class GuestTeacherResource extends Resource
     protected static ?string $navigationGroup = 'Homepage';
     protected static ?string $recordTitleAttribute = 'title';
     public static function form(Form $form): Form
-    { 
+    {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
-                ->required()
-                ->maxLength(255), 
-                Forms\Components\Textarea::make('description')
-                ->required()
-                
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\MarkdownEditor::make('description')
+                    ->required()
+
             ]);
     }
 
     public static function table(Table $table): Table
-    { 
+    {
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
@@ -55,14 +55,14 @@ class GuestTeacherResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -71,5 +71,5 @@ class GuestTeacherResource extends Resource
             'view' => Pages\ViewGuestTeacher::route('/{record}'),
             'edit' => Pages\EditGuestTeacher::route('/{record}/edit'),
         ];
-    }    
+    }
 }

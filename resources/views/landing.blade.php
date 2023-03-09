@@ -365,7 +365,11 @@
                             <div class="content">
                                 <small>{{ $data->created_at }}</small>
                                 <h5>{{ $data->news_title }}</h5>
-                                <p>{{ $data->news_description }}</p>
+                                <p>
+                                    <!-- {{ $data->news_description}} -->
+                                {{ substr(strip_tags($data->news_description), 0, 50) }}
+                                {{ strlen(strip_tags($data->news_description)) > 50 ? "...Baca Selengkapnya" : "" }}
+                                </p>
                             </div>
                         </article>
                     </div>
@@ -477,7 +481,7 @@
                                             let pesan = document.getElementById("pesan").value;
 
                                             var win = window.open(
-                                                `https://wa.me/6285606683326?text=---Ki-APP%20Message---%0ANama%20sekolah%20%3A%20${sekolah}%0AEmail%20%3A%20${email}%0ANama%20PIC%20%3A%20${pic}%0ANo%20WA%20%3A%20${hp}%0AIsi%20Pesan%20%3A%0A${pesan}`,
+                                                `https://wa.me/6289616658515?text=---Ki-APP%20Message---%0ANama%20sekolah%20%3A%20${sekolah}%0AEmail%20%3A%20${email}%0ANama%20PIC%20%3A%20${pic}%0ANo%20WA%20%3A%20${hp}%0AIsi%20Pesan%20%3A%0A${pesan}`,
                                                 '_blank');
                                             // win.focus();
                                         }

@@ -98,9 +98,9 @@ class HomeController extends Controller
     {
         $user = auth()->user();
 
-        $data = DB::table('internships');
-        $data = $data->get()->where('status', 'approved');
-        $data = Internship::where('user_id', $user->id)->get();
+        // $data = DB::table('internships');
+        // $data = $data->get()->where('status', 'approved');
+        $data = Internship::where([['user_id', $user->id], ['status', 'approved']])->get();
 
 
 
