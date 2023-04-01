@@ -388,7 +388,7 @@
                                             let pesan = document.getElementById("pesan").value;
 
                                             var win = window.open(
-                                                `https://wa.me/6289616658515?text=---Ki-APP%20Message---%0ANama%20sekolah%20%3A%20${sekolah}%0AEmail%20%3A%20${email}%0ANama%20PIC%20%3A%20${pic}%0ANo%20WA%20%3A%20${hp}%0AIsi%20Pesan%20%3A%0A${pesan}`,
+                                                `https://wa.me/6289665667111?text=---Ki-APP%20Message---%0ANama%20sekolah%20%3A%20${sekolah}%0AEmail%20%3A%20${email}%0ANama%20PIC%20%3A%20${pic}%0ANo%20WA%20%3A%20${hp}%0AIsi%20Pesan%20%3A%0A${pesan}`,
                                                 '_blank');
                                             // win.focus();
                                         }
@@ -449,57 +449,6 @@
     {{-- //maps --}}
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script>
-        //  // Creating map options
-        //  var mapOptions = {
-        //     center: [-6.9994, 110.4277],
-        //     zoom: 10
-        //  }
-
-        //  var target = L.latLng('-6.9994, 110.4277');
-
-        //  // Creating a map object
-        //  var map = new L.map('map', mapOptions);
-
-        //  // Creating a Layer object
-        //  var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-        // //  L.marker(target).addTo(map);
-
-        //  // Adding layer to the map
-        //  map.addLayer(layer);
-
-        //========================================================
-        // // Where you want to render the map.
-        // var element = document.getElementById('map');
-
-        // // Height has to be set. You can do this in CSS too.
-        // // element.style = 'height:300px;';
-
-        // // Create Leaflet map on map element.
-        // var map = L.map(element);
-
-        // // Add OSM tile layer to the Leaflet map.
-        // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        // }).addTo(map);
-
-        // // Target's GPS coordinates.
-        // var target = L.latLng('-6.9994', '110.4277');
-        // var a = L.latLng('-6.9537', '110.1517');
-        // var b = L.latLng('-7.1377', '110.4469');
-        // var c = L.latLng('-6.9728', '110.5019');
-
-        // // Set map's center to target with zoom 10.
-        // map.setView(target, 10);
-
-        // // Place a marker on the same location.
-        // L.marker(target).addTo(map);
-        // L.marker(a).addTo(map);
-        // L.marker(b).addTo(map);
-        // L.marker(c).addTo(map);
-
-        //terbaru
-
         var map = L.map('map').setView([-6.995016, 110.418427], 8);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
