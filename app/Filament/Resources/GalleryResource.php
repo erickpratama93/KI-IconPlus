@@ -23,8 +23,10 @@ class GalleryResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('title')
+                    ->required(),
                 Forms\Components\TextInput::make('embed_text')
-                ->required()
+                    ->required()
             ]);
     }
 
@@ -32,6 +34,7 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('embed_text'),
             ])
             ->filters([
@@ -45,14 +48,14 @@ class GalleryResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -61,5 +64,5 @@ class GalleryResource extends Resource
             'view' => Pages\ViewGallery::route('/{record}'),
             'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];
-    }    
+    }
 }
